@@ -12,36 +12,57 @@
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
-# limitations under the License.
+# limitations under the License
 
-FROM alpine:3.18 AS builder
+FROM ubuntu:22.04 AS builder
 
-RUN apk update && apk add git cmake make g++ grpc-dev protobuf-dev linux-headers
+ARG DEBIAN_FRONTEND=noninteractive
+ARG OPENTELEMETRY_CPP_VERSION=1.9.1
 
-ARG OPENTELEMETRY_CPP_VERSION
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    cmake \
+    build-essential \
+    g++ \
+    pkg-config \
+    libgrpc++-dev \
+    libprotobuf-dev \
+    protobuf-compiler \
+    linux-libc-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN git clone --depth 1 --branch v${OPENTELEMETRY_CPP_VERSION} https://github.com/open-telemetry/opentelemetry-cpp \
-    && cd opentelemetry-cpp/ \
-    && mkdir build \
-    && cd build \
-    && cmake .. -DCMAKE_CXX_STANDARD=17 -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-          -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF \
-          -DWITH_EXAMPLES=OFF -DWITH_OTLP_GRPC=ON -DWITH_ABSEIL=ON \
-    && make -j$(nproc || sysctl -n hw.ncpu || echo 1) install && cd ../..
+WORKDIR /currency
 
 COPY ./src/currency /currency
 COPY ./pb/demo.proto /currency/proto/demo.proto
 
-RUN cd /currency \
-    && mkdir -p build && cd build \
-    && cmake .. \
-    && make -j$(nproc || sysctl -n hw.ncpu || echo 1) install
+RUN rm -rf build \
+    && mkdir -p build
 
+WORKDIR /currency/build
 
-FROM alpine:3.18 AS release
+RUN cmake .. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+    || (echo "CMAKE FAILED" && ls -R .. && exit 1)
 
-RUN apk update && apk add grpc-dev protobuf-dev
+RUN make -j1 \
+    || (echo "MAKE FAILED" && exit 1)
+
+RUN make install
+
+RUN ls -lah /currency || true
+RUN ls -lah /currency/build || true
+RUN find /currency -type f || true
+
+FROM ubuntu:22.04 AS release
+
+RUN apt-get update && apt-get install -y \
+    libgrpc++-dev \
+    libprotobuf-dev
+
 COPY --from=builder /usr/local /usr/local
+COPY --from=builder /currency /currency
 
 EXPOSE ${CURRENCY_PORT}
-ENTRYPOINT ["sh", "-c", "./usr/local/bin/currency ${CURRENCY_PORT}"]
+
+ENTRYPOINT ["/usr/local/bin/currency"]
