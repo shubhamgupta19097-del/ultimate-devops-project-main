@@ -1,0 +1,1752 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+ Image ultimate-devops-project-demo-opensearch Building 
+ Image ghcr.io/open-telemetry/demo:2.1.3-currency Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.45kB done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 30B 0.1s
+#2 transferring dockerfile: 1.75kB 0.3s done
+#2 DONE 0.3s
+
+#3 [internal] load metadata for docker.io/library/alpine:3.18
+#3 ...
+
+#4 [auth] library/alpine:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/alpine:3.20
+#5 ...
+
+#3 [internal] load metadata for docker.io/library/alpine:3.18
+#3 DONE 2.1s
+
+#5 [internal] load metadata for docker.io/library/alpine:3.20
+#5 DONE 2.1s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 33B 0.0s
+#6 transferring context: 440B 0.3s done
+#6 DONE 0.4s
+
+#7 [internal] load build context
+#7 DONE 0.0s
+
+#8 [release 1/3] FROM docker.io/library/alpine:3.18@sha256:de0eb0b3f2a47ba1eb89389859a9bd88b28e82f5826b6969ad604979713c2d4f
+#8 resolve docker.io/library/alpine:3.18@sha256:de0eb0b3f2a47ba1eb89389859a9bd88b28e82f5826b6969ad604979713c2d4f
+#8 resolve docker.io/library/alpine:3.18@sha256:de0eb0b3f2a47ba1eb89389859a9bd88b28e82f5826b6969ad604979713c2d4f 0.1s done
+#8 DONE 0.1s
+
+#9 [builder 1/6] FROM docker.io/library/alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc
+#9 resolve docker.io/library/alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc 0.1s done
+#9 DONE 0.1s
+
+#10 importing cache manifest from ghcr.io/open-telemetry/demo:2.1.3-currency
+#10 inferred cache manifest type: application/vnd.oci.image.index.v1+json done
+#10 DONE 4.4s
+
+#8 [release 1/3] FROM docker.io/library/alpine:3.18@sha256:de0eb0b3f2a47ba1eb89389859a9bd88b28e82f5826b6969ad604979713c2d4f
+#8 CACHED
+
+#9 [builder 1/6] FROM docker.io/library/alpine:3.20@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc
+#9 CACHED
+
+#7 [internal] load build context
+#7 transferring context: 483B 0.6s
+#7 transferring context: 2.00kB 2.0s done
+#7 DONE 2.0s
+
+#11 [builder 2/6] RUN apk add --no-cache     git     cmake     make     g++     grpc-dev     protobuf-dev     linux-headers
+#11 0.680 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+#11 1.788 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+#11 3.187 (1/168) Installing libacl (2.3.2-r0)
+#11 3.277 (2/168) Installing libbz2 (1.0.8-r6)
+#11 3.345 (3/168) Installing libexpat (2.7.5-r0)
+#11 3.458 (4/168) Installing lz4-libs (1.9.4-r5)
+#11 3.524 (5/168) Installing xz-libs (5.8.3-r0)
+#11 3.629 (6/168) Installing zstd-libs (1.5.6-r0)
+#11 3.794 (7/168) Installing libarchive (3.8.3-r0)
+#11 3.930 (8/168) Installing libgcc (13.2.1_git20240309-r1)
+#11 4.015 (9/168) Installing rhash-libs (1.4.4-r0)
+#11 4.159 (10/168) Installing libstdc++ (13.2.1_git20240309-r1)
+#11 4.550 (11/168) Installing libuv (1.48.0-r0)
+#11 4.651 (12/168) Installing cmake (3.29.3-r0)
+#11 ...
+
+#12 [release 2/3] RUN apk update && apk add grpc-dev protobuf-dev
+#12 0.677 fetch https://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/APKINDEX.tar.gz
+#12 1.827 fetch https://dl-cdn.alpinelinux.org/alpine/v3.18/community/x86_64/APKINDEX.tar.gz
+#12 3.194 v3.18.12-157-g9a50c898d9e [https://dl-cdn.alpinelinux.org/alpine/v3.18/main]
+#12 3.194 v3.18.12-157-g9a50c898d9e [https://dl-cdn.alpinelinux.org/alpine/v3.18/community]
+#12 3.194 OK: 20070 distinct packages available
+#12 3.555 (1/124) Installing ca-certificates (20241121-r1)
+#12 4.005 (2/124) Installing libgcc (12.2.1_git20220924-r10)
+#12 4.121 (3/124) Installing libstdc++ (12.2.1_git20220924-r10)
+#12 4.776 (4/124) Installing abseil-cpp-raw-logging-internal (20230125.3-r1)
+#12 4.857 (5/124) Installing abseil-cpp-crc-internal (20230125.3-r1)
+#12 4.931 (6/124) Installing abseil-cpp-crc32c (20230125.3-r1)
+#12 4.982 (7/124) Installing abseil-cpp-crc-cord-state (20230125.3-r1)
+#12 5.062 (8/124) Installing abseil-cpp-strings-internal (20230125.3-r1)
+#12 5.165 (9/124) Installing abseil-cpp-strings (20230125.3-r1)
+#12 5.252 (10/124) Installing abseil-cpp-throw-delegate (20230125.3-r1)
+#12 5.328 (11/124) Installing abseil-cpp-cord-internal (20230125.3-r1)
+#12 5.530 (12/124) Installing abseil-cpp-exponential-biased (20230125.3-r1)
+#12 5.605 (13/124) Installing abseil-cpp-cordz-functions (20230125.3-r1)
+#12 5.686 (14/124) Installing abseil-cpp-spinlock-wait (20230125.3-r1)
+#12 5.772 (15/124) Installing abseil-cpp-base (20230125.3-r1)
+#12 5.837 (16/124) Installing abseil-cpp-cordz-handle (20230125.3-r1)
+#12 5.910 (17/124) Installing abseil-cpp-debugging-internal (20230125.3-r1)
+#12 5.995 (18/124) Installing abseil-cpp-stacktrace (20230125.3-r1)
+#12 6.085 (19/124) Installing abseil-cpp-malloc-internal (20230125.3-r1)
+#12 6.162 (20/124) Installing abseil-cpp-symbolize (20230125.3-r1)
+#12 6.240 (21/124) Installing abseil-cpp-int128 (20230125.3-r1)
+#12 6.322 (22/124) Installing abseil-cpp-time-zone (20230125.3-r1)
+#12 6.406 (23/124) Installing abseil-cpp-time (20230125.3-r1)
+#12 6.514 (24/124) Installing abseil-cpp-synchronization (20230125.3-r1)
+#12 6.578 (25/124) Installing abseil-cpp-cordz-info (20230125.3-r1)
+#12 6.636 (26/124) Installing abseil-cpp-cord (20230125.3-r1)
+#12 6.702 (27/124) Installing abseil-cpp-flags-commandlineflag (20230125.3-r1)
+#12 6.765 (28/124) Installing abseil-cpp-flags-commandlineflag-internal (20230125.3-r1)
+#12 6.844 (29/124) Installing abseil-cpp-flags-program-name (20230125.3-r1)
+#12 6.968 (30/124) Installing abseil-cpp-flags-config (20230125.3-r1)
+#12 7.072 (31/124) Installing abseil-cpp-flags-internal (20230125.3-r1)
+#12 7.137 (32/124) Installing abseil-cpp-str-format-internal (20230125.3-r1)
+#12 7.275 (33/124) Installing abseil-cpp-flags-marshalling (20230125.3-r1)
+#12 7.328 (34/124) Installing abseil-cpp-flags-private-handle-accessor (20230125.3-r1)
+#12 7.403 (35/124) Installing abseil-cpp-city (20230125.3-r1)
+#12 7.504 (36/124) Installing abseil-cpp-low-level-hash (20230125.3-r1)
+#12 7.581 (37/124) Installing abseil-cpp-hash (20230125.3-r1)
+#12 7.682 (38/124) Installing abseil-cpp-raw-hash-set (20230125.3-r1)
+#12 7.787 (39/124) Installing abseil-cpp-flags-reflection (20230125.3-r1)
+#12 7.855 (40/124) Installing abseil-cpp-random-internal-randen-hwaes (20230125.3-r1)
+#12 7.904 (41/124) Installing abseil-cpp-random-internal-platform (20230125.3-r1)
+#12 7.958 (42/124) Installing abseil-cpp-random-internal-randen-hwaes-impl (20230125.3-r1)
+#12 8.022 (43/124) Installing abseil-cpp-random-internal-randen-slow (20230125.3-r1)
+#12 8.103 (44/124) Installing abseil-cpp-random-internal-randen (20230125.3-r1)
+#12 8.178 (45/124) Installing abseil-cpp-random-internal-seed-material (20230125.3-r1)
+#12 8.256 (46/124) Installing abseil-cpp-random-seed-gen-exception (20230125.3-r1)
+#12 8.324 (47/124) Installing abseil-cpp-random-internal-pool-urbg (20230125.3-r1)
+#12 8.415 (48/124) Installing abseil-cpp-strerror (20230125.3-r1)
+#12 8.488 (49/124) Installing abseil-cpp-status (20230125.3-r1)
+#12 8.566 (50/124) Installing abseil-cpp-statusor (20230125.3-r1)
+#12 8.624 (51/124) Installing c-ares (1.19.1-r1)
+#12 8.733 (52/124) Installing icu-data-en (73.2-r2)
+#12 9.662 Executing icu-data-en-73.2-r2.post-install
+#12 9.688 *
+#12 9.688 * If you need ICU with non-English locales and legacy charset support, install
+#12 9.688 * package icu-data-full.
+#12 9.688 *
+#12 9.691 (53/124) Installing icu-libs (73.2-r2)
+#12 10.72 (54/124) Installing re2 (2023.03.01-r1)
+#12 10.87 (55/124) Installing grpc (1.54.2-r0)
+#12 ...
+
+#11 [builder 2/6] RUN apk add --no-cache     git     cmake     make     g++     grpc-dev     protobuf-dev     linux-headers
+#11 11.12 (13/168) Installing libstdc++-dev (13.2.1_git20240309-r1)
+#11 12.54 (14/168) Installing jansson (2.14-r4)
+#11 12.62 (15/168) Installing binutils (2.42-r1)
+#11 13.88 (16/168) Installing libgomp (13.2.1_git20240309-r1)
+#11 14.06 (17/168) Installing libatomic (13.2.1_git20240309-r1)
+#11 14.10 (18/168) Installing gmp (6.3.0-r1)
+#11 14.22 (19/168) Installing isl26 (0.26-r1)
+#11 14.60 (20/168) Installing mpfr4 (4.2.1-r0)
+#11 14.78 (21/168) Installing mpc1 (1.3.1-r1)
+#11 14.87 (22/168) Installing gcc (13.2.1_git20240309-r1)
+#11 ...
+
+#12 [release 2/3] RUN apk update && apk add grpc-dev protobuf-dev
+#12 12.63 (56/124) Installing libprotobuf (3.21.12-r2)
+#12 13.23 (57/124) Installing libprotoc (3.21.12-r2)
+#12 13.58 (58/124) Installing grpc-cpp (1.54.2-r0)
+#12 13.90 (59/124) Installing protoc (3.21.12-r2)
+#12 13.98 (60/124) Installing libprotobuf-lite (3.21.12-r2)
+#12 14.09 (61/124) Installing protobuf (3.21.12-r2)
+#12 14.15 (62/124) Installing grpc-plugins (1.54.2-r0)
+#12 14.23 (63/124) Installing linux-headers (6.3-r0)
+#12 14.82 (64/124) Installing abseil-cpp-atomic-hook-test-helper (20230125.3-r1)
+#12 14.87 (65/124) Installing abseil-cpp-bad-any-cast-impl (20230125.3-r1)
+#12 14.94 (66/124) Installing abseil-cpp-bad-optional-access (20230125.3-r1)
+#12 15.02 (67/124) Installing abseil-cpp-bad-variant-access (20230125.3-r1)
+#12 15.10 (68/124) Installing abseil-cpp-civil-time (20230125.3-r1)
+#12 15.30 (69/124) Installing abseil-cpp-cordz-sample-token (20230125.3-r1)
+#12 15.38 (70/124) Installing abseil-cpp-crc-cpu-detect (20230125.3-r1)
+#12 15.54 (71/124) Installing abseil-cpp-demangle-internal (20230125.3-r1)
+#12 15.64 (72/124) Installing abseil-cpp-examine-stack (20230125.3-r1)
+#12 15.75 (73/124) Installing abseil-cpp-log-globals (20230125.3-r1)
+#12 15.87 (74/124) Installing abseil-cpp-log-internal-globals (20230125.3-r1)
+#12 16.02 (75/124) Installing abseil-cpp-log-internal-format (20230125.3-r1)
+#12 16.13 (76/124) Installing abseil-cpp-log-sink (20230125.3-r1)
+#12 16.33 (77/124) Installing abseil-cpp-log-internal-log-sink-set (20230125.3-r1)
+#12 16.44 (78/124) Installing abseil-cpp-log-internal-proto (20230125.3-r1)
+#12 16.52 (79/124) Installing abseil-cpp-log-internal-message (20230125.3-r1)
+#12 16.64 (80/124) Installing abseil-cpp-die-if-null (20230125.3-r1)
+#12 16.77 (81/124) Installing gtest (1.13.0-r1)
+#12 16.96 (82/124) Installing abseil-cpp-exception-safety-testing (20230125.3-r1)
+#12 17.07 (83/124) Installing abseil-cpp-failure-signal-handler (20230125.3-r1)
+#12 17.32 (84/124) Installing abseil-cpp-flags-usage (20230125.3-r1)
+#12 17.45 (85/124) Installing abseil-cpp-flags-usage-internal (20230125.3-r1)
+#12 17.59 (86/124) Installing abseil-cpp-flags-parse (20230125.3-r1)
+#12 17.71 (87/124) Installing abseil-cpp-flags (20230125.3-r1)
+#12 17.87 (88/124) Installing abseil-cpp-graphcycles-internal (20230125.3-r1)
+#12 18.01 (89/124) Installing abseil-cpp-hash-generator-testing (20230125.3-r1)
+#12 18.15 (90/124) Installing abseil-cpp-hashtablez-sampler (20230125.3-r1)
+#12 18.32 (91/124) Installing abseil-cpp-leak-check (20230125.3-r1)
+#12 18.45 (92/124) Installing abseil-cpp-log-entry (20230125.3-r1)
+#12 18.59 (93/124) Installing abseil-cpp-log-flags (20230125.3-r1)
+#12 18.77 (94/124) Installing abseil-cpp-log-initialize (20230125.3-r1)
+#12 18.88 (95/124) Installing abseil-cpp-log-internal-nullguard (20230125.3-r1)
+#12 18.99 (96/124) Installing abseil-cpp-log-internal-check-op (20230125.3-r1)
+#12 19.14 (97/124) Installing abseil-cpp-log-internal-conditions (20230125.3-r1)
+#12 19.33 (98/124) Installing abseil-cpp-log-severity (20230125.3-r1)
+#12 19.51 (99/124) Installing abseil-cpp-log-internal-test-actions (20230125.3-r1)
+#12 19.69 (100/124) Installing abseil-cpp-log-internal-test-helpers (20230125.3-r1)
+#12 19.87 (101/124) Installing abseil-cpp-log-internal-test-matchers (20230125.3-r1)
+#12 20.10 (102/124) Installing abseil-cpp-per-thread-sem-test-common (20230125.3-r1)
+#12 20.24 (103/124) Installing abseil-cpp-periodic-sampler (20230125.3-r1)
+#12 20.38 (104/124) Installing abseil-cpp-pow10-helper (20230125.3-r1)
+#12 20.53 (105/124) Installing abseil-cpp-random-distributions (20230125.3-r1)
+#12 20.68 (106/124) Installing abseil-cpp-random-internal-distribution-test-util (20230125.3-r1)
+#12 20.84 (107/124) Installing abseil-cpp-random-seed-sequences (20230125.3-r1)
+#12 21.00 (108/124) Installing gmock (1.13.0-r1)
+#12 21.21 (109/124) Installing abseil-cpp-scoped-mock-log (20230125.3-r1)
+#12 21.38 (110/124) Installing abseil-cpp-scoped-set-env (20230125.3-r1)
+#12 21.53 (111/124) Installing abseil-cpp-spinlock-test-common (20230125.3-r1)
+#12 21.65 (112/124) Installing abseil-cpp-stack-consumption (20230125.3-r1)
+#12 21.82 (113/124) Installing abseil-cpp-test-instance-tracker (20230125.3-r1)
+#12 21.95 (114/124) Installing abseil-cpp-time-internal-test-util (20230125.3-r1)
+#12 22.10 (115/124) Installing pkgconf (1.9.5-r0)
+#12 22.24 (116/124) Installing abseil-cpp-dev (20230125.3-r1)
+#12 22.93 (117/124) Installing c-ares-dev (1.19.1-r1)
+#12 23.05 (118/124) Installing openssl-dev (3.1.8-r0)
+#12 ...
+
+#11 [builder 2/6] RUN apk add --no-cache     git     cmake     make     g++     grpc-dev     protobuf-dev     linux-headers
+#11 23.07 (23/168) Installing musl-dev (1.2.5-r3)
+#11 23.84 (24/168) Installing g++ (13.2.1_git20240309-r1)
+#11 ...
+
+#12 [release 2/3] RUN apk update && apk add grpc-dev protobuf-dev
+#12 23.45 (119/124) Installing icu (73.2-r2)
+#12 23.77 (120/124) Installing icu-dev (73.2-r2)
+#12 24.19 (121/124) Installing re2-dev (2023.03.01-r1)
+#12 24.37 (122/124) Installing zlib-dev (1.2.13-r1)
+#12 24.48 (123/124) Installing grpc-dev (1.54.2-r0)
+#12 24.75 (124/124) Installing protobuf-dev (3.21.12-r2)
+#12 25.68 Executing busybox-1.36.1-r7.trigger
+#12 25.70 Executing ca-certificates-20241121-r1.trigger
+#12 25.11 OK: 81 MiB in 139 packages
+#12 DONE 25.3s
+
+#11 [builder 2/6] RUN apk add --no-cache     git     cmake     make     g++     grpc-dev     protobuf-dev     linux-headers
+#11 25.91 (25/168) Installing ca-certificates (20260413-r0)
+#11 26.05 (26/168) Installing brotli-libs (1.1.0-r2)
+#11 26.24 (27/168) Installing c-ares (1.33.1-r0)
+#11 26.35 (28/168) Installing libunistring (1.2-r0)
+#11 26.56 (29/168) Installing libidn2 (2.3.7-r0)
+#11 26.67 (30/168) Installing nghttp2-libs (1.62.1-r0)
+#11 26.78 (31/168) Installing libpsl (0.21.5-r1)
+#11 26.89 (32/168) Installing libcurl (8.14.1-r2)
+#11 27.07 (33/168) Installing pcre2 (10.43-r0)
+#11 27.21 (34/168) Installing git (2.45.4-r0)
+#11 27.79 (35/168) Installing git-init-template (2.45.4-r0)
+#11 27.87 (36/168) Installing grpc (1.62.1-r0)
+#11 27.90 (37/168) Installing abseil-cpp-raw-logging-internal (20230802.1-r0)
+#11 27.94 (38/168) Installing abseil-cpp-crc-internal (20230802.1-r0)
+#11 28.01 (39/168) Installing abseil-cpp-crc32c (20230802.1-r0)
+#11 28.10 (40/168) Installing abseil-cpp-crc-cord-state (20230802.1-r0)
+#11 28.16 (41/168) Installing abseil-cpp-strings-internal (20230802.1-r0)
+#11 28.21 (42/168) Installing abseil-cpp-strings (20230802.1-r0)
+#11 28.32 (43/168) Installing abseil-cpp-throw-delegate (20230802.1-r0)
+#11 28.41 (44/168) Installing abseil-cpp-cord-internal (20230802.1-r0)
+#11 28.49 (45/168) Installing abseil-cpp-exponential-biased (20230802.1-r0)
+#11 28.53 (46/168) Installing abseil-cpp-cordz-functions (20230802.1-r0)
+#11 28.59 (47/168) Installing abseil-cpp-spinlock-wait (20230802.1-r0)
+#11 28.63 (48/168) Installing abseil-cpp-base (20230802.1-r0)
+#11 28.70 (49/168) Installing abseil-cpp-int128 (20230802.1-r0)
+#11 28.76 (50/168) Installing abseil-cpp-time-zone (20230802.1-r0)
+#11 28.83 (51/168) Installing abseil-cpp-time (20230802.1-r0)
+#11 28.87 (52/168) Installing abseil-cpp-kernel-timeout-internal (20230802.1-r0)
+#11 28.94 (53/168) Installing abseil-cpp-malloc-internal (20230802.1-r0)
+#11 29.01 (54/168) Installing abseil-cpp-debugging-internal (20230802.1-r0)
+#11 29.11 (55/168) Installing abseil-cpp-stacktrace (20230802.1-r0)
+#11 29.15 (56/168) Installing abseil-cpp-synchronization (20230802.1-r0)
+#11 29.23 (57/168) Installing abseil-cpp-cordz-handle (20230802.1-r0)
+#11 29.28 (58/168) Installing abseil-cpp-cordz-info (20230802.1-r0)
+#11 29.33 (59/168) Installing abseil-cpp-cord (20230802.1-r0)
+#11 29.42 (60/168) Installing abseil-cpp-city (20230802.1-r0)
+#11 29.50 (61/168) Installing abseil-cpp-low-level-hash (20230802.1-r0)
+#11 29.56 (62/168) Installing abseil-cpp-hash (20230802.1-r0)
+#11 29.62 (63/168) Installing abseil-cpp-raw-hash-set (20230802.1-r0)
+#11 29.67 (64/168) Installing abseil-cpp-strerror (20230802.1-r0)
+#11 29.71 (65/168) Installing abseil-cpp-status (20230802.1-r0)
+#11 29.80 (66/168) Installing abseil-cpp-statusor (20230802.1-r0)
+#11 29.84 (67/168) Installing abseil-cpp-str-format-internal (20230802.1-r0)
+#11 29.92 (68/168) Installing abseil-cpp-flags-commandlineflag (20230802.1-r0)
+#11 29.96 (69/168) Installing abseil-cpp-flags-commandlineflag-internal (20230802.1-r0)
+#11 30.03 (70/168) Installing abseil-cpp-flags-program-name (20230802.1-r0)
+#11 30.10 (71/168) Installing abseil-cpp-flags-config (20230802.1-r0)
+#11 30.15 (72/168) Installing abseil-cpp-flags-internal (20230802.1-r0)
+#11 30.22 (73/168) Installing abseil-cpp-flags-marshalling (20230802.1-r0)
+#11 30.28 (74/168) Installing abseil-cpp-flags-private-handle-accessor (20230802.1-r0)
+#11 30.34 (75/168) Installing abseil-cpp-flags-reflection (20230802.1-r0)
+#11 30.43 (76/168) Installing libgpr (1.62.1-r0)
+#11 30.53 (77/168) Installing abseil-cpp-random-internal-randen-hwaes (20230802.1-r0)
+#11 30.58 (78/168) Installing abseil-cpp-random-internal-platform (20230802.1-r0)
+#11 30.64 (79/168) Installing abseil-cpp-random-internal-randen-hwaes-impl (20230802.1-r0)
+#11 30.70 (80/168) Installing abseil-cpp-random-internal-randen-slow (20230802.1-r0)
+#11 30.77 (81/168) Installing abseil-cpp-random-internal-randen (20230802.1-r0)
+#11 30.85 (82/168) Installing abseil-cpp-random-internal-seed-material (20230802.1-r0)
+#11 30.92 (83/168) Installing abseil-cpp-random-seed-gen-exception (20230802.1-r0)
+#11 30.99 (84/168) Installing abseil-cpp-random-internal-pool-urbg (20230802.1-r0)
+#11 31.04 (85/168) Installing libaddress_sorting (1.62.1-r0)
+#11 31.09 (86/168) Installing icu-data-en (74.2-r1)
+#11 31.32 Executing icu-data-en-74.2-r1.post-install
+#11 31.32 *
+#11 31.32 * If you need ICU with non-English locales and legacy charset support, install
+#11 31.32 * package icu-data-full.
+#11 31.32 *
+#11 31.32 (87/168) Installing icu-libs (74.2-r1)
+#11 31.66 (88/168) Installing re2 (2024.05.01-r0)
+#11 31.79 (89/168) Installing libupb_base_lib (1.62.1-r0)
+#11 31.87 (90/168) Installing libupb_mem_lib (1.62.1-r0)
+#11 31.92 (91/168) Installing libupb_message_lib (1.62.1-r0)
+#11 32.00 (92/168) Installing libupb_json_lib (1.62.1-r0)
+#11 32.12 (93/168) Installing libupb_textformat_lib (1.62.1-r0)
+#11 32.23 (94/168) Installing libgrpc (1.62.1-r0)
+#11 32.71 (95/168) Installing libgrpc_unsecure (1.62.1-r0)
+#11 33.11 (96/168) Installing abseil-cpp-symbolize (20230802.1-r0)
+#11 33.18 (97/168) Installing abseil-cpp-examine-stack (20230802.1-r0)
+#11 33.23 (98/168) Installing abseil-cpp-log-globals (20230802.1-r0)
+#11 33.28 (99/168) Installing abseil-cpp-log-internal-globals (20230802.1-r0)
+#11 33.34 (100/168) Installing abseil-cpp-log-internal-format (20230802.1-r0)
+#11 33.40 (101/168) Installing abseil-cpp-log-sink (20230802.1-r0)
+#11 33.46 (102/168) Installing abseil-cpp-log-internal-log-sink-set (20230802.1-r0)
+#11 33.56 (103/168) Installing abseil-cpp-log-internal-proto (20230802.1-r0)
+#11 33.61 (104/168) Installing abseil-cpp-log-internal-message (20230802.1-r0)
+#11 33.68 (105/168) Installing abseil-cpp-die-if-null (20230802.1-r0)
+#11 33.73 (106/168) Installing abseil-cpp-log-internal-nullguard (20230802.1-r0)
+#11 33.79 (107/168) Installing abseil-cpp-log-internal-check-op (20230802.1-r0)
+#11 33.86 (108/168) Installing abseil-cpp-log-internal-conditions (20230802.1-r0)
+#11 33.92 (109/168) Installing libprotobuf (24.4-r1)
+#11 34.16 (110/168) Installing libprotoc (24.4-r1)
+#11 34.42 (111/168) Installing grpc-cpp (1.62.1-r0)
+#11 34.67 (112/168) Installing abseil-cpp-log-initialize (20230802.1-r0)
+#11 34.73 (113/168) Installing protoc (24.4-r1)
+#11 34.80 (114/168) Installing libprotobuf-lite (24.4-r1)
+#11 34.91 (115/168) Installing protobuf (24.4-r1)
+#11 34.94 (116/168) Installing grpc-plugins (1.62.1-r0)
+#11 35.05 (117/168) Installing libgrpc_authorization_provider (1.62.1-r0)
+#11 35.33 (118/168) Installing linux-headers (6.6-r0)
+#11 35.69 (119/168) Installing abseil-cpp-atomic-hook-test-helper (20230802.1-r0)
+#11 35.76 (120/168) Installing abseil-cpp-bad-any-cast-impl (20230802.1-r0)
+#11 35.83 (121/168) Installing abseil-cpp-bad-optional-access (20230802.1-r0)
+#11 35.90 (122/168) Installing abseil-cpp-bad-variant-access (20230802.1-r0)
+#11 35.94 (123/168) Installing abseil-cpp-civil-time (20230802.1-r0)
+#11 36.00 (124/168) Installing abseil-cpp-cordz-sample-token (20230802.1-r0)
+#11 36.06 (125/168) Installing abseil-cpp-crc-cpu-detect (20230802.1-r0)
+#11 36.13 (126/168) Installing abseil-cpp-demangle-internal (20230802.1-r0)
+#11 36.20 (127/168) Installing gtest (1.14.0-r2)
+#11 36.34 (128/168) Installing abseil-cpp-exception-safety-testing (20230802.1-r0)
+#11 36.40 (129/168) Installing abseil-cpp-failure-signal-handler (20230802.1-r0)
+#11 36.46 (130/168) Installing abseil-cpp-flags-usage (20230802.1-r0)
+#11 36.51 (131/168) Installing abseil-cpp-flags-usage-internal (20230802.1-r0)
+#11 36.57 (132/168) Installing abseil-cpp-flags-parse (20230802.1-r0)
+#11 36.64 (133/168) Installing abseil-cpp-flags (20230802.1-r0)
+#11 36.71 (134/168) Installing abseil-cpp-graphcycles-internal (20230802.1-r0)
+#11 36.78 (135/168) Installing abseil-cpp-hash-generator-testing (20230802.1-r0)
+#11 36.84 (136/168) Installing abseil-cpp-hashtablez-sampler (20230802.1-r0)
+#11 36.92 (137/168) Installing abseil-cpp-leak-check (20230802.1-r0)
+#11 36.98 (138/168) Installing abseil-cpp-log-entry (20230802.1-r0)
+#11 37.05 (139/168) Installing abseil-cpp-log-flags (20230802.1-r0)
+#11 37.12 (140/168) Installing abseil-cpp-log-severity (20230802.1-r0)
+#11 37.18 (141/168) Installing abseil-cpp-log-internal-test-actions (20230802.1-r0)
+#11 37.25 (142/168) Installing abseil-cpp-log-internal-test-helpers (20230802.1-r0)
+#11 37.32 (143/168) Installing abseil-cpp-log-internal-test-matchers (20230802.1-r0)
+#11 37.42 (144/168) Installing abseil-cpp-per-thread-sem-test-common (20230802.1-r0)
+#11 37.48 (145/168) Installing abseil-cpp-periodic-sampler (20230802.1-r0)
+#11 37.56 (146/168) Installing abseil-cpp-pow10-helper (20230802.1-r0)
+#11 37.64 (147/168) Installing abseil-cpp-random-distributions (20230802.1-r0)
+#11 37.68 (148/168) Installing abseil-cpp-random-internal-distribution-test-util (20230802.1-r0)
+#11 37.73 (149/168) Installing abseil-cpp-random-seed-sequences (20230802.1-r0)
+#11 37.80 (150/168) Installing gmock (1.14.0-r2)
+#11 37.88 (151/168) Installing abseil-cpp-scoped-mock-log (20230802.1-r0)
+#11 37.95 (152/168) Installing abseil-cpp-scoped-set-env (20230802.1-r0)
+#11 38.02 (153/168) Installing abseil-cpp-spinlock-test-common (20230802.1-r0)
+#11 38.11 (154/168) Installing abseil-cpp-stack-consumption (20230802.1-r0)
+#11 38.21 (155/168) Installing abseil-cpp-string-view (20230802.1-r0)
+#11 38.27 (156/168) Installing abseil-cpp-test-instance-tracker (20230802.1-r0)
+#11 38.32 (157/168) Installing abseil-cpp-time-internal-test-util (20230802.1-r0)
+#11 38.37 (158/168) Installing pkgconf (2.2.0-r0)
+#11 38.47 (159/168) Installing abseil-cpp-dev (20230802.1-r0)
+#11 38.73 (160/168) Installing c-ares-dev (1.33.1-r0)
+#11 38.82 (161/168) Installing openssl-dev (3.3.7-r0)
+#11 39.03 (162/168) Installing icu (74.2-r1)
+#11 39.22 (163/168) Installing icu-dev (74.2-r1)
+#11 39.47 (164/168) Installing re2-dev (2024.05.01-r0)
+#11 39.55 (165/168) Installing zlib-dev (1.3.2-r0)
+#11 39.66 (166/168) Installing grpc-dev (1.62.1-r0)
+#11 39.84 (167/168) Installing make (4.4.1-r2)
+#11 40.00 (168/168) Installing protobuf-dev (24.4-r1)
+#11 40.19 Executing busybox-1.36.1-r31.trigger
+#11 40.20 Executing ca-certificates-20260413-r0.trigger
+#11 40.25 OK: 350 MiB in 182 packages
+#11 DONE 40.5s
+
+#13 [builder 3/6] RUN git clone --depth 1 --branch v1.23.0 https://github.com/open-telemetry/opentelemetry-cpp     && cd opentelemetry-cpp/     && mkdir build     && cd build     && cmake .. -DCMAKE_CXX_STANDARD=17 -DCMAKE_POSITION_INDEPENDENT_CODE=ON           -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF           -DWITH_EXAMPLES=OFF -DWITH_OTLP_GRPC=ON -DWITH_ABSEIL=ON     && make -j$(nproc || sysctl -n hw.ncpu || echo 1) install && cd ../..
+#13 0.442 Cloning into 'opentelemetry-cpp'...
+#13 3.936 Note: switching to 'ea1f0d61ce5baa5584b097266bf133d1f31e3607'.
+#13 3.936 
+#13 3.936 You are in 'detached HEAD' state. You can look around, make experimental
+#13 3.936 changes and commit them, and you can discard any commits you make in this
+#13 3.936 state without impacting any branches by switching back to a branch.
+#13 3.936 
+#13 3.936 If you want to create a new branch to retain commits you create, you may
+#13 3.936 do so (now or later) by using -c with the switch command. Example:
+#13 3.936 
+#13 3.936   git switch -c <new-branch-name>
+#13 3.936 
+#13 3.936 Or undo this operation with:
+#13 3.936 
+#13 3.936   git switch -
+#13 3.936 
+#13 3.936 Turn off this advice by setting config variable advice.detachedHead to false
+#13 3.936 
+#13 4.227 CMake Deprecation Warning at CMakeLists.txt:9 (cmake_policy):
+#13 4.227   The OLD behavior for policy CMP0092 will be removed from a future version
+#13 4.227   of CMake.
+#13 4.227 
+#13 4.227   The cmake-policies(7) manual explains that the OLD behaviors of all
+#13 4.227   policies are deprecated and that a policy should be set to OLD only under
+#13 4.227   specific short-term circumstances.  Projects should be ported to the NEW
+#13 4.227   behavior and not rely on setting a policy to OLD.
+#13 4.227 
+#13 4.227 
+#13 4.294 -- The CXX compiler identification is GNU 13.2.1
+#13 4.318 -- Detecting CXX compiler ABI info
+#13 4.428 -- Detecting CXX compiler ABI info - done
+#13 4.469 -- Check for working CXX compiler: /usr/bin/c++ - skipped
+#13 4.470 -- Detecting CXX compile features
+#13 4.471 -- Detecting CXX compile features - done
+#13 4.478 -- Performing Test check_cxx_compiler_flag_-Wno-type-limits
+#13 4.566 -- Performing Test check_cxx_compiler_flag_-Wno-type-limits - Success
+#13 4.568 -- Performing Test check_cxx_compiler_flag_-Wno-deprecated-declarations
+#13 4.671 -- Performing Test check_cxx_compiler_flag_-Wno-deprecated-declarations - Success
+#13 4.671 -- Performing Test check_cxx_compiler_flag_-Wno-unused-parameter
+#13 4.766 -- Performing Test check_cxx_compiler_flag_-Wno-unused-parameter - Success
+#13 4.805 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+#13 4.912 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+#13 4.917 -- Found Threads: TRUE
+#13 4.944 -- Found ZLIB: /lib/libz.so (found version "1.3.2")
+#13 5.046 -- Found OpenSSL: /usr/lib/libcrypto.so (found version "3.3.7")
+#13 5.052 -- Could NOT find c-ares (missing: c-ares_DIR)
+#13 5.055 -- Found c-ares: /usr/include (found version "1.33.1")
+#13 5.089 -- Found RE2 via CMake.
+#13 5.101 -- gRPC_CPP_PLUGIN_EXECUTABLE=$<TARGET_FILE:gRPC::grpc_cpp_plugin>
+#13 5.102 -- PROTOBUF_PROTOC_EXECUTABLE=$<TARGET_FILE:protobuf::protoc>
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- build settings
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- OpenTelemetry VERSION: 1.23.0
+#13 8.131 -- OpenTelemetry ABI: 1
+#13 8.131 -- CMAKE_SYSTEM_PROCESSOR: x86_64
+#13 8.131 -- CXX: GNU 13.2.1
+#13 8.131 -- CMAKE_BUILD_TYPE: Release
+#13 8.131 -- CXXFLAGS: 
+#13 8.131 -- CMAKE_CXX_STANDARD: 17
+#13 8.131 -- CMAKE_TOOLCHAIN_FILE: 
+#13 8.131 -- BUILD_SHARED_LIBS: 
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- opentelemetry-cpp build options
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- WITH_API_ONLY: OFF
+#13 8.131 -- WITH_NO_DEPRECATED_CODE: OFF
+#13 8.131 -- WITH_ABI_VERSION_1: ON
+#13 8.131 -- WITH_ABI_VERSION_2: OFF
+#13 8.131 -- OTELCPP_VERSIONED_LIBS: OFF
+#13 8.131 -- OTELCPP_MAINTAINER_MODE: OFF
+#13 8.131 -- WITH_STL: OFF
+#13 8.131 -- WITH_GSL: OFF
+#13 8.131 -- WITH_NO_GETENV: OFF
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- opentelemetry-cpp cmake component options
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- WITH_OTLP_GRPC: ON
+#13 8.131 -- WITH_OTLP_HTTP: OFF
+#13 8.131 -- WITH_OTLP_FILE: OFF
+#13 8.131 -- WITH_HTTP_CLIENT_CURL: OFF
+#13 8.131 -- WITH_ZIPKIN: OFF
+#13 8.131 -- WITH_PROMETHEUS: OFF
+#13 8.131 -- WITH_ELASTICSEARCH: OFF
+#13 8.131 -- WITH_OPENTRACING: OFF
+#13 8.131 -- WITH_ETW: 
+#13 8.131 -- OPENTELEMETRY_BUILD_DLL: 
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- feature preview options
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- WITH_ASYNC_EXPORT_PREVIEW: OFF
+#13 8.131 -- WITH_THREAD_INSTRUMENTATION_PREVIEW: OFF
+#13 8.131 -- WITH_METRICS_EXEMPLAR_PREVIEW: OFF
+#13 8.131 -- WITH_OTLP_GRPC_SSL_MTLS_PREVIEW: OFF
+#13 8.131 -- WITH_OTLP_GRPC_CREDENTIAL_PREVIEW: OFF
+#13 8.131 -- WITH_OTLP_RETRY_PREVIEW: OFF
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- third-party options
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- WITH_NLOHMANN_JSON: OFF
+#13 8.131 -- WITH_CURL_LOGGING: OFF
+#13 8.131 -- WITH_OTLP_HTTP_COMPRESSION: OFF
+#13 8.131 -- ---------------------------------------------
+#13 8.131 -- examples and test options
+#13 8.131 -- ---------------------------------------------
+#13 8.133 -- WITH_BENCHMARK: ON
+#13 8.133 -- WITH_EXAMPLES: OFF
+#13 8.133 -- WITH_EXAMPLES_HTTP: OFF
+#13 8.133 -- WITH_FUNC_TESTS: ON
+#13 8.133 -- BUILD_W3CTRACECONTEXT_TEST: OFF
+#13 8.133 -- BUILD_TESTING: OFF
+#13 8.133 -- ---------------------------------------------
+#13 8.133 -- versions
+#13 8.133 -- ---------------------------------------------
+#13 8.133 -- CMake: 3.29.3
+#13 8.133 -- GTest:  ()
+#13 8.133 -- benchmark:  ()
+#13 8.133 -- Abseil: 20230802
+#13 8.133 -- opentelemetry-proto: 1.7.0 (fetch_repository)
+#13 8.133 -- Protobuf: 24.4.0 (find_package - SHARED_LIBRARY)
+#13 8.133 -- gRPC: 1.62.1 (find_package - SHARED_LIBRARY)
+#13 8.133 -- ZLIB: 1.3.2 ()
+#13 8.133 -- ---------------------------------------------
+#13 8.141 -- Building WITH_STL=OFF
+#13 8.192 -- Installing components:
+#13 8.192 -- Install COMPONENT api
+#13 8.192 --   TARGETS: opentelemetry_api
+#13 8.192 --   TARGETS_ALIAS: opentelemetry-cpp::api
+#13 8.192 --   COMPONENT_DEPENDS: 
+#13 8.192 --   THIRDPARTY_DEPENDS: 
+#13 8.192 --   FILES_DIRECTORY: /opentelemetry-cpp/api/include/opentelemetry
+#13 8.192 --   FILES_DESTINATION: include
+#13 8.192 --   FILES_MATCHING: PATTERN;*.h
+#13 8.192 -- Install COMPONENT sdk
+#13 8.192 --   TARGETS: opentelemetry_sdk;opentelemetry_common;opentelemetry_resources;opentelemetry_version;opentelemetry_logs;opentelemetry_trace;opentelemetry_metrics
+#13 8.192 --   TARGETS_ALIAS: opentelemetry-cpp::sdk;opentelemetry-cpp::common;opentelemetry-cpp::resources;opentelemetry-cpp::version;opentelemetry-cpp::logs;opentelemetry-cpp::trace;opentelemetry-cpp::metrics
+#13 8.192 --   COMPONENT_DEPENDS: api
+#13 8.192 --   THIRDPARTY_DEPENDS: Threads
+#13 8.192 --   FILES_DIRECTORY: /opentelemetry-cpp/sdk/include/opentelemetry/
+#13 8.192 --   FILES_DESTINATION: include/opentelemetry
+#13 8.192 --   FILES_MATCHING: PATTERN;*.h
+#13 8.193 -- Install COMPONENT ext_common
+#13 8.193 --   TARGETS: opentelemetry_ext
+#13 8.193 --   TARGETS_ALIAS: opentelemetry-cpp::ext
+#13 8.193 --   COMPONENT_DEPENDS: api
+#13 8.193 --   THIRDPARTY_DEPENDS: 
+#13 8.193 --   FILES_DIRECTORY: /opentelemetry-cpp/ext/include/opentelemetry/ext
+#13 8.193 --   FILES_DESTINATION: include/opentelemetry/
+#13 8.193 --   FILES_MATCHING: PATTERN;*.h
+#13 8.193 -- Install COMPONENT exporters_otlp_common
+#13 8.193 --   TARGETS: opentelemetry_otlp_recordable;opentelemetry_proto
+#13 8.193 --   TARGETS_ALIAS: opentelemetry-cpp::otlp_recordable;opentelemetry-cpp::proto
+#13 8.193 --   COMPONENT_DEPENDS: api;sdk
+#13 8.193 --   THIRDPARTY_DEPENDS: Protobuf
+#13 8.193 --   FILES_DIRECTORY: /opentelemetry-cpp/exporters/otlp/include/opentelemetry/exporters/otlp
+#13 8.193 --   FILES_DESTINATION: include/opentelemetry/exporters
+#13 8.193 --   FILES_MATCHING: PATTERN;*.h;PATTERN;otlp_http*.h;EXCLUDE;PATTERN;otlp_grpc*.h;EXCLUDE;PATTERN;otlp_file*.h;EXCLUDE
+#13 8.193 -- Install COMPONENT exporters_otlp_grpc
+#13 8.193 --   TARGETS: opentelemetry_exporter_otlp_grpc_client;opentelemetry_proto_grpc;opentelemetry_exporter_otlp_grpc;opentelemetry_exporter_otlp_grpc_log;opentelemetry_exporter_otlp_grpc_metrics
+#13 8.193 --   TARGETS_ALIAS: opentelemetry-cpp::otlp_grpc_client;opentelemetry-cpp::proto_grpc;opentelemetry-cpp::otlp_grpc_exporter;opentelemetry-cpp::otlp_grpc_log_record_exporter;opentelemetry-cpp::otlp_grpc_metrics_exporter
+#13 8.193 --   COMPONENT_DEPENDS: api;sdk;ext_common;exporters_otlp_common
+#13 8.193 --   THIRDPARTY_DEPENDS: gRPC
+#13 8.193 --   FILES_DIRECTORY: /opentelemetry-cpp/exporters/otlp/include/opentelemetry/exporters/otlp
+#13 8.193 --   FILES_DESTINATION: include/opentelemetry/exporters
+#13 8.193 --   FILES_MATCHING: PATTERN;otlp_grpc*.h
+#13 8.194 -- Install COMPONENT exporters_ostream
+#13 8.194 --   TARGETS: opentelemetry_exporter_ostream_span;opentelemetry_exporter_ostream_metrics;opentelemetry_exporter_ostream_logs
+#13 8.194 --   TARGETS_ALIAS: opentelemetry-cpp::ostream_span_exporter;opentelemetry-cpp::ostream_metrics_exporter;opentelemetry-cpp::ostream_log_record_exporter
+#13 8.194 --   COMPONENT_DEPENDS: api;sdk
+#13 8.194 --   THIRDPARTY_DEPENDS: 
+#13 8.194 --   FILES_DIRECTORY: /opentelemetry-cpp/exporters/ostream/include/opentelemetry/exporters/ostream
+#13 8.194 --   FILES_DESTINATION: include/opentelemetry/exporters
+#13 8.194 --   FILES_MATCHING: PATTERN;*.h
+#13 8.194 -- Install COMPONENT exporters_in_memory
+#13 8.194 --   TARGETS: opentelemetry_exporter_in_memory;opentelemetry_exporter_in_memory_metric
+#13 8.194 --   TARGETS_ALIAS: opentelemetry-cpp::in_memory_span_exporter;opentelemetry-cpp::in_memory_metric_exporter
+#13 8.194 --   COMPONENT_DEPENDS: api;sdk
+#13 8.194 --   THIRDPARTY_DEPENDS: 
+#13 8.194 --   FILES_DIRECTORY: /opentelemetry-cpp/exporters/memory/include/opentelemetry/exporters/memory
+#13 8.194 --   FILES_DESTINATION: include/opentelemetry/exporters
+#13 8.194 --   FILES_MATCHING: PATTERN;*.h
+#13 8.198 -- Configuring done (4.0s)
+#13 8.343 -- Generating done (0.1s)
+#13 8.350 CMake Warning:
+#13 8.350   Manually-specified variables were not used by the project:
+#13 8.350 
+#13 8.350     WITH_ABSEIL
+#13 8.350 
+#13 8.350 
+#13 8.352 -- Build files have been written to: /opentelemetry-cpp/build
+#13 8.398 [  0%] [Run]: "/usr/bin/protoc-24.4.0" "--proto_path=/opentelemetry-cpp/build/_deps/opentelemetry-proto-src" "--cpp_out=/opentelemetry-cpp/build/generated/third_party/opentelemetry-proto" "--grpc_out=generate_mock_code=true:/opentelemetry-cpp/build/generated/third_party/opentelemetry-proto" "--plugin=protoc-gen-grpc="/usr/bin/grpc_cpp_plugin"" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/common/v1/common.proto" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/resource/v1/resource.proto" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/trace/v1/trace.proto" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/logs/v1/logs.proto" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/metrics/v1/metrics.proto" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/profiles/v1development/profiles.proto" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/collector/trace/v1/trace_service.proto" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/collector/logs/v1/logs_service.proto" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/collector/metrics/v1/metrics_service.proto" "/opentelemetry-cpp/build/_deps/opentelemetry-proto-src/opentelemetry/proto/collector/profiles/v1development/profiles_service.proto"
+#13 8.410 [  1%] Building CXX object sdk/src/version/CMakeFiles/opentelemetry_version.dir/version.cc.o
+#13 8.415 [  2%] Building CXX object sdk/src/common/CMakeFiles/opentelemetry_common.dir/global_log_handler.cc.o
+#13 8.418 [  2%] Building CXX object sdk/src/common/CMakeFiles/opentelemetry_common.dir/random.cc.o
+#13 8.425 [  4%] Building CXX object sdk/src/common/CMakeFiles/opentelemetry_common.dir/platform/fork_unix.cc.o
+#13 8.425 [  4%] Building CXX object sdk/src/common/CMakeFiles/opentelemetry_common.dir/env_variables.cc.o
+#13 8.425 [  4%] Building CXX object sdk/src/common/CMakeFiles/opentelemetry_common.dir/base64.cc.o
+#13 8.429 [  5%] Building CXX object sdk/src/common/CMakeFiles/opentelemetry_common.dir/disabled.cc.o
+#13 8.450 [  6%] Linking CXX static library libopentelemetry_version.a
+#13 8.500 [  6%] Built target opentelemetry_version
+#13 8.849 [  7%] Building CXX object CMakeFiles/opentelemetry_proto.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/metrics/v1/metrics.pb.cc.o
+#13 8.849 [  9%] Building CXX object CMakeFiles/opentelemetry_proto.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/resource/v1/resource.pb.cc.o
+#13 8.849 [  9%] Building CXX object CMakeFiles/opentelemetry_proto.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/common/v1/common.pb.cc.o
+#13 8.849 [  9%] Building CXX object CMakeFiles/opentelemetry_proto.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/trace/v1/trace.pb.cc.o
+#13 8.851 [ 10%] Building CXX object CMakeFiles/opentelemetry_proto.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/logs/v1/logs.pb.cc.o
+#13 8.855 [ 11%] Building CXX object CMakeFiles/opentelemetry_proto.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/collector/trace/v1/trace_service.pb.cc.o
+#13 8.857 [ 11%] Building CXX object CMakeFiles/opentelemetry_proto.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/collector/logs/v1/logs_service.pb.cc.o
+#13 8.992 [ 12%] Building CXX object CMakeFiles/opentelemetry_proto.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/collector/metrics/v1/metrics_service.pb.cc.o
+#13 13.01 [ 13%] Linking CXX static library libopentelemetry_common.a
+#13 13.09 [ 13%] Built target opentelemetry_common
+#13 13.13 [ 14%] Building CXX object sdk/src/resource/CMakeFiles/opentelemetry_resources.dir/resource_detector.cc.o
+#13 13.13 [ 14%] Building CXX object sdk/src/resource/CMakeFiles/opentelemetry_resources.dir/resource.cc.o
+#13 16.41 [ 15%] Linking CXX shared library libopentelemetry_proto.so
+#13 16.53 [ 15%] Built target opentelemetry_proto
+#13 16.55 [ 15%] Building CXX object CMakeFiles/opentelemetry_proto_grpc.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/collector/trace/v1/trace_service.grpc.pb.cc.o
+#13 16.56 [ 16%] Building CXX object CMakeFiles/opentelemetry_proto_grpc.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/collector/logs/v1/logs_service.grpc.pb.cc.o
+#13 16.56 [ 17%] Building CXX object CMakeFiles/opentelemetry_proto_grpc.dir/generated/third_party/opentelemetry-proto/opentelemetry/proto/collector/metrics/v1/metrics_service.grpc.pb.cc.o
+#13 17.97 [ 18%] Linking CXX static library libopentelemetry_resources.a
+#13 18.02 [ 18%] Built target opentelemetry_resources
+#13 18.04 [ 19%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/meter_provider.cc.o
+#13 18.05 [ 20%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/logger_provider_factory.cc.o
+#13 18.05 [ 21%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/logger_provider.cc.o
+#13 18.05 [ 21%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/provider.cc.o
+#13 18.05 [ 22%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/async_instruments.cc.o
+#13 18.05 [ 22%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/provider.cc.o
+#13 18.05 [ 23%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/meter_provider_factory.cc.o
+#13 18.06 [ 23%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/meter.cc.o
+#13 18.06 [ 23%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/tracer_context.cc.o
+#13 20.13 In file included from /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:12,
+#13 20.13                  from /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/logger.h:12,
+#13 20.13                  from /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/logger_provider.h:16,
+#13 20.13                  from /opentelemetry-cpp/sdk/src/logs/logger_provider_factory.cc:11:
+#13 20.13 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:31:29: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 20.13    31 |   virtual nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 20.13       |                             ^~~~~~~~~~~
+#13 20.13 In file included from /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:11:
+#13 20.13 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 20.13    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 20.13       |                                ^~~~~~~~~~~
+#13 20.17 /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:137:21: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 20.17   137 |   nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 20.17       |                     ^~~~~~~~~~~
+#13 20.17 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 20.17    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 20.17       |                                ^~~~~~~~~~~
+#13 20.17 /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:145:21: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 20.17   145 |   nostd::shared_ptr<EventLogger> event_logger_;
+#13 20.17       |                     ^~~~~~~~~~~
+#13 20.17 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 20.17    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 20.17       |                                ^~~~~~~~~~~
+#13 20.34 In file included from /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:12,
+#13 20.34                  from /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/logger.h:12,
+#13 20.34                  from /opentelemetry-cpp/sdk/src/logs/logger_provider.cc:16:
+#13 20.34 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:31:29: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 20.34    31 |   virtual nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 20.34       |                             ^~~~~~~~~~~
+#13 20.34 In file included from /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:11:
+#13 20.34 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 20.34    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 20.34       |                                ^~~~~~~~~~~
+#13 20.40 /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:137:21: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 20.40   137 |   nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 20.40       |                     ^~~~~~~~~~~
+#13 20.40 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 20.40    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 20.40       |                                ^~~~~~~~~~~
+#13 20.40 /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:145:21: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 20.40   145 |   nostd::shared_ptr<EventLogger> event_logger_;
+#13 20.40       |                     ^~~~~~~~~~~
+#13 20.40 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 20.40    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 20.40       |                                ^~~~~~~~~~~
+#13 20.84 [ 24%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/tracer_context_factory.cc.o
+#13 21.23 In file included from /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:12,
+#13 21.23                  from /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h:10,
+#13 21.23                  from /opentelemetry-cpp/sdk/src/logs/provider.cc:6:
+#13 21.23 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:31:29: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 21.23    31 |   virtual nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 21.23       |                             ^~~~~~~~~~~
+#13 21.23 In file included from /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:11:
+#13 21.23 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 21.23    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 21.23       |                                ^~~~~~~~~~~
+#13 21.30 /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:137:21: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 21.30   137 |   nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 21.30       |                     ^~~~~~~~~~~
+#13 21.30 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 21.30    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 21.30       |                                ^~~~~~~~~~~
+#13 21.31 /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:145:21: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 21.31   145 |   nostd::shared_ptr<EventLogger> event_logger_;
+#13 21.31       |                     ^~~~~~~~~~~
+#13 21.31 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 21.31    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 21.31       |                                ^~~~~~~~~~~
+#13 21.34 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h:57:53: warning: 'EventLoggerProvider' is deprecated [-Wdeprecated-declarations]
+#13 21.34    57 |   OPENTELEMETRY_DEPRECATED static nostd::shared_ptr<EventLoggerProvider>
+#13 21.34       |                                                     ^~~~~~~~~~~~~~~~~~~
+#13 21.34 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:21:32: note: declared here
+#13 21.34    21 | class OPENTELEMETRY_DEPRECATED EventLoggerProvider
+#13 21.34       |                                ^~~~~~~~~~~~~~~~~~~
+#13 21.35 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h:68:31: warning: 'EventLoggerProvider' is deprecated [-Wdeprecated-declarations]
+#13 21.35    68 |       const nostd::shared_ptr<EventLoggerProvider> &tp) noexcept
+#13 21.35       |                               ^~~~~~~~~~~~~~~~~~~
+#13 21.35 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:21:32: note: declared here
+#13 21.35    21 | class OPENTELEMETRY_DEPRECATED EventLoggerProvider
+#13 21.35       |                                ^~~~~~~~~~~~~~~~~~~
+#13 21.35 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h:84:56: warning: 'EventLoggerProvider' is deprecated [-Wdeprecated-declarations]
+#13 21.35    84 |   OPENTELEMETRY_API_SINGLETON static nostd::shared_ptr<EventLoggerProvider> &
+#13 21.35       |                                                        ^~~~~~~~~~~~~~~~~~~
+#13 21.35 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:21:32: note: declared here
+#13 21.35    21 | class OPENTELEMETRY_DEPRECATED EventLoggerProvider
+#13 21.35       |                                ^~~~~~~~~~~~~~~~~~~
+#13 21.39 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h: In static member function 'static opentelemetry::v1::nostd::shared_ptr<opentelemetry::v1::logs::EventLoggerProvider> opentelemetry::v1::logs::Provider::GetEventLoggerProvider()':
+#13 21.39 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h:61:30: warning: 'EventLoggerProvider' is deprecated [-Wdeprecated-declarations]
+#13 21.39    61 |     return nostd::shared_ptr<EventLoggerProvider>(GetEventProvider());
+#13 21.39       |                              ^~~~~~~~~~~~~~~~~~~
+#13 21.39 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:21:32: note: declared here
+#13 21.39    21 | class OPENTELEMETRY_DEPRECATED EventLoggerProvider
+#13 21.39       |                                ^~~~~~~~~~~~~~~~~~~
+#13 21.39 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h:61:67: warning: 'static opentelemetry::v1::nostd::shared_ptr<opentelemetry::v1::logs::EventLoggerProvider>& opentelemetry::v1::logs::Provider::GetEventProvider()' is deprecated [-Wdeprecated-declarations]
+#13 21.39    61 |     return nostd::shared_ptr<EventLoggerProvider>(GetEventProvider());
+#13 21.39       |                                                   ~~~~~~~~~~~~~~~~^~
+#13 21.39 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h:85:3: note: declared here
+#13 21.39    85 |   GetEventProvider() noexcept
+#13 21.39       |   ^~~~~~~~~~~~~~~~
+#13 21.41 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h: In static member function 'static void opentelemetry::v1::logs::Provider::SetEventLoggerProvider(const opentelemetry::v1::nostd::shared_ptr<opentelemetry::v1::logs::EventLoggerProvider>&)':
+#13 21.41 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h:71:21: warning: 'static opentelemetry::v1::nostd::shared_ptr<opentelemetry::v1::logs::EventLoggerProvider>& opentelemetry::v1::logs::Provider::GetEventProvider()' is deprecated [-Wdeprecated-declarations]
+#13 21.41    71 |     GetEventProvider() = tp;
+#13 21.41       |     ~~~~~~~~~~~~~~~~^~
+#13 21.41 /opentelemetry-cpp/api/include/opentelemetry/logs/provider.h:85:3: note: declared here
+#13 21.41    85 |   GetEventProvider() noexcept
+#13 21.41       |   ^~~~~~~~~~~~~~~~
+#13 24.11 [ 25%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/meter_config.cc.o
+#13 24.20 [ 26%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/tracer_provider.cc.o
+#13 25.01 [ 27%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/tracer_provider_factory.cc.o
+#13 27.79 [ 27%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/tracer.cc.o
+#13 28.68 [ 28%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/meter_context.cc.o
+#13 28.72 [ 29%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/meter_context_factory.cc.o
+#13 30.19 [ 29%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/logger.cc.o
+#13 30.37 [ 29%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/metric_reader.cc.o
+#13 30.52 [ 30%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/instrument_metadata_validator.cc.o
+#13 32.24 [ 31%] Linking CXX shared library libopentelemetry_proto_grpc.so
+#13 33.29 In file included from /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:12,
+#13 33.29                  from /opentelemetry-cpp/sdk/src/logs/logger.cc:13:
+#13 33.29 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:31:29: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 33.29    31 |   virtual nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 33.29       |                             ^~~~~~~~~~~
+#13 33.30 In file included from /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:11:
+#13 33.30 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 33.30    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 33.30       |                                ^~~~~~~~~~~
+#13 33.35 /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:137:21: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 33.35   137 |   nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 33.35       |                     ^~~~~~~~~~~
+#13 33.35 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 33.35    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 33.35       |                                ^~~~~~~~~~~
+#13 33.35 /opentelemetry-cpp/api/include/opentelemetry/logs/noop.h:145:21: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 33.35   145 |   nostd::shared_ptr<EventLogger> event_logger_;
+#13 33.35       |                     ^~~~~~~~~~~
+#13 33.36 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 33.36    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 33.36       |                                ^~~~~~~~~~~
+#13 33.46 [ 32%] Built target opentelemetry_proto_grpc
+#13 33.47 [ 33%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/span.cc.o
+#13 34.68 [ 34%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/exporter.cc.o
+#13 35.81 [ 34%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc_client.dir/src/otlp_grpc_client.cc.o
+#13 35.85 [ 35%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc_client.dir/src/otlp_grpc_client_factory.cc.o
+#13 35.95 [ 36%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/exporter.cc.o
+#13 36.66 [ 37%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/export/periodic_exporting_metric_reader.cc.o
+#13 36.84 [ 38%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc_client.dir/src/otlp_grpc_utils.cc.o
+#13 37.00 [ 39%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/provider.cc.o
+#13 37.41 [ 39%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/batch_span_processor.cc.o
+#13 38.16 [ 40%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/event_logger_provider.cc.o
+#13 40.42 In file included from /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:8,
+#13 40.42                  from /opentelemetry-cpp/sdk/src/logs/event_logger_provider.cc:4:
+#13 40.42 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:31:29: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 40.42    31 |   virtual nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 40.42       |                             ^~~~~~~~~~~
+#13 40.42 In file included from /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:7:
+#13 40.42 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 40.42    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 40.42       |                                ^~~~~~~~~~~
+#13 40.42 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:34:42: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 40.42    34 |   nostd::shared_ptr<opentelemetry::logs::EventLogger> CreateEventLogger(
+#13 40.42       |                                          ^~~~~~~~~~~
+#13 40.42 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 40.42    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 40.42       |                                ^~~~~~~~~~~
+#13 40.50 [ 41%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/batch_span_processor_factory.cc.o
+#13 40.70 In file included from /opentelemetry-cpp/sdk/src/logs/event_logger_provider.cc:9:
+#13 40.70 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger.h:40:41: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 40.70    40 |   using opentelemetry::logs::EventLogger::EmitEvent;
+#13 40.70       |                                         ^~
+#13 40.70 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 40.70    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 40.70       |                                ^~~~~~~~~~~
+#13 40.71 /opentelemetry-cpp/sdk/src/logs/event_logger_provider.cc:27:55: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 40.71    27 | opentelemetry::nostd::shared_ptr<opentelemetry::logs::EventLogger>
+#13 40.71       |                                                       ^~~~~~~~~~~
+#13 40.71 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 40.71    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 40.71       |                                ^~~~~~~~~~~
+#13 40.72 /opentelemetry-cpp/sdk/src/logs/event_logger_provider.cc: In member function 'virtual opentelemetry::v1::nostd::shared_ptr<opentelemetry::v1::logs::EventLogger> opentelemetry::v1::sdk::logs::EventLoggerProvider::CreateEventLogger(opentelemetry::v1::nostd::shared_ptr<opentelemetry::v1::logs::Logger>, opentelemetry::v1::nostd::string_view)':
+#13 40.72 /opentelemetry-cpp/sdk/src/logs/event_logger_provider.cc:32:64: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 40.72    32 |   return opentelemetry::nostd::shared_ptr<opentelemetry::logs::EventLogger>{
+#13 40.72       |                                                                ^~~~~~~~~~~
+#13 40.72 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 40.72    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 40.72       |                                ^~~~~~~~~~~
+#13 40.72 /opentelemetry-cpp/sdk/src/logs/event_logger_provider.cc:33:11: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 40.72    33 |       new EventLogger(delegate_logger, event_domain)};
+#13 40.72       |           ^~~~~~~~~~~
+#13 40.72 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger.h:22:32: note: declared here
+#13 40.72    22 | class OPENTELEMETRY_DEPRECATED EventLogger final : public opentelemetry::logs::EventLogger
+#13 40.72       |                                ^~~~~~~~~~~
+#13 41.26 [ 42%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/simple_processor_factory.cc.o
+#13 41.63 [ 43%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/event_logger_provider_factory.cc.o
+#13 42.29 [ 43%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/event_logger.cc.o
+#13 42.62 [ 43%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/samplers/always_on_factory.cc.o
+#13 42.10 In file included from /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:8,
+#13 42.10                  from /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider_factory.h:9,
+#13 42.10                  from /opentelemetry-cpp/sdk/src/logs/event_logger_provider_factory.cc:4:
+#13 42.10 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger_provider.h:31:29: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 42.10    31 |   virtual nostd::shared_ptr<EventLogger> CreateEventLogger(
+#13 42.10       |                             ^~~~~~~~~~~
+#13 42.10 In file included from /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:7:
+#13 42.10 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 42.10    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 42.10       |                                ^~~~~~~~~~~
+#13 42.10 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:34:42: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 42.10    34 |   nostd::shared_ptr<opentelemetry::logs::EventLogger> CreateEventLogger(
+#13 42.10       |                                          ^~~~~~~~~~~
+#13 42.10 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 42.10    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 42.10       |                                ^~~~~~~~~~~
+#13 42.10 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider_factory.h:31:77: warning: 'EventLoggerProvider' is deprecated [-Wdeprecated-declarations]
+#13 42.10    31 |   OPENTELEMETRY_DEPRECATED static std::unique_ptr<opentelemetry::sdk::logs::EventLoggerProvider>
+#13 42.10       |                                                                             ^~~~~~~~~~~~~~~~~~~
+#13 42.10 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:26:53: note: declared here
+#13 42.10    26 | class OPENTELEMETRY_EXPORT OPENTELEMETRY_DEPRECATED EventLoggerProvider final
+#13 42.10       |                                                     ^~~~~~~~~~~~~~~~~~~
+#13 42.10 /opentelemetry-cpp/sdk/src/logs/event_logger_provider_factory.cc:18:43: warning: 'EventLoggerProvider' is deprecated [-Wdeprecated-declarations]
+#13 42.10    18 | std::unique_ptr<opentelemetry::sdk::logs::EventLoggerProvider> EventLoggerProviderFactory::Create()
+#13 42.10       |                                           ^~~~~~~~~~~~~~~~~~~
+#13 42.10 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:26:53: note: declared here
+#13 42.10    26 | class OPENTELEMETRY_EXPORT OPENTELEMETRY_DEPRECATED EventLoggerProvider final
+#13 42.10       |                                                     ^~~~~~~~~~~~~~~~~~~
+#13 42.13 /opentelemetry-cpp/sdk/src/logs/event_logger_provider_factory.cc: In static member function 'static std::unique_ptr<opentelemetry::v1::sdk::logs::EventLoggerProvider> opentelemetry::v1::sdk::logs::EventLoggerProviderFactory::Create()':
+#13 42.13 /opentelemetry-cpp/sdk/src/logs/event_logger_provider_factory.cc:20:52: warning: 'EventLoggerProvider' is deprecated [-Wdeprecated-declarations]
+#13 42.13    20 |   return std::unique_ptr<opentelemetry::sdk::logs::EventLoggerProvider>(new EventLoggerProvider());
+#13 42.13       |                                                    ^~~~~~~~~~~~~~~~~~~
+#13 42.13 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:26:53: note: declared here
+#13 42.13    26 | class OPENTELEMETRY_EXPORT OPENTELEMETRY_DEPRECATED EventLoggerProvider final
+#13 42.13       |                                                     ^~~~~~~~~~~~~~~~~~~
+#13 42.13 /opentelemetry-cpp/sdk/src/logs/event_logger_provider_factory.cc:20:77: warning: 'EventLoggerProvider' is deprecated [-Wdeprecated-declarations]
+#13 42.13    20 |   return std::unique_ptr<opentelemetry::sdk::logs::EventLoggerProvider>(new EventLoggerProvider());
+#13 42.13       |                                                                             ^~~~~~~~~~~~~~~~~~~
+#13 42.13 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger_provider.h:26:53: note: declared here
+#13 42.13    26 | class OPENTELEMETRY_EXPORT OPENTELEMETRY_DEPRECATED EventLoggerProvider final
+#13 42.13       |                                                     ^~~~~~~~~~~~~~~~~~~
+#13 42.47 [ 44%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/simple_log_record_processor.cc.o
+#13 42.67 [ 45%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/simple_log_record_processor_factory.cc.o
+#13 42.77 [ 46%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/export/periodic_exporting_metric_reader_factory.cc.o
+#13 43.00 [ 46%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/export/periodic_exporting_metric_reader_options.cc.o
+#13 43.26 In file included from /opentelemetry-cpp/sdk/src/logs/event_logger.cc:13:
+#13 43.26 /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger.h:40:41: warning: 'EventLogger' is deprecated [-Wdeprecated-declarations]
+#13 43.26    40 |   using opentelemetry::logs::EventLogger::EmitEvent;
+#13 43.26       |                                         ^~
+#13 43.26 In file included from /opentelemetry-cpp/sdk/include/opentelemetry/sdk/logs/event_logger.h:8:
+#13 43.26 /opentelemetry-cpp/api/include/opentelemetry/logs/event_logger.h:21:32: note: declared here
+#13 43.26    21 | class OPENTELEMETRY_DEPRECATED EventLogger
+#13 43.26       |                                ^~~~~~~~~~~
+#13 43.45 [ 47%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/batch_log_record_processor.cc.o
+#13 43.72 [ 47%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/batch_log_record_processor_factory.cc.o
+#13 43.91 [ 48%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/samplers/always_off_factory.cc.o
+#13 44.18 [ 49%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/samplers/parent.cc.o
+#13 44.28 [ 50%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/samplers/parent_factory.cc.o
+#13 44.62 [ 50%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/samplers/trace_id_ratio.cc.o
+#13 45.06 [ 51%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/state/filtered_ordered_attribute_map.cc.o
+#13 45.23 [ 52%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/state/metric_collector.cc.o
+#13 45.50 [ 53%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/samplers/trace_id_ratio_factory.cc.o
+#13 46.24 [ 54%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/state/observable_registry.cc.o
+#13 46.40 [ 55%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/logger_config.cc.o
+#13 46.48 [ 56%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/random_id_generator.cc.o
+#13 46.66 [ 57%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/random_id_generator_factory.cc.o
+#13 47.01 [ 57%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/state/sync_metric_storage.cc.o
+#13 47.02 [ 58%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/logger_context.cc.o
+#13 47.24 [ 59%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/state/temporal_metric_storage.cc.o
+#13 47.26 [ 60%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/aggregation/base2_exponential_histogram_aggregation.cc.o
+#13 47.27 [ 60%] Building CXX object sdk/src/trace/CMakeFiles/opentelemetry_trace.dir/tracer_config.cc.o
+#13 47.39 [ 60%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/logger_context_factory.cc.o
+#13 47.43 [ 60%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/aggregation/base2_exponential_histogram_indexer.cc.o
+#13 47.63 [ 61%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/multi_log_record_processor.cc.o
+#13 47.75 [ 62%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/multi_log_record_processor_factory.cc.o
+#13 48.89 [ 63%] Linking CXX static library libopentelemetry_trace.a
+#13 48.95 [ 64%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/aggregation/histogram_aggregation.cc.o
+#13 49.06 [ 64%] Built target opentelemetry_trace
+#13 49.08 [ 65%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/multi_recordable.cc.o
+#13 51.13 [ 66%] Linking CXX static library libopentelemetry_exporter_otlp_grpc_client.a
+#13 51.24 [ 66%] Built target opentelemetry_exporter_otlp_grpc_client
+#13 51.26 [ 66%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/read_write_log_record.cc.o
+#13 51.39 [ 67%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/aggregation/lastvalue_aggregation.cc.o
+#13 52.83 [ 68%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/aggregation/sum_aggregation.cc.o
+#13 53.81 [ 68%] Building CXX object exporters/ostream/CMakeFiles/opentelemetry_exporter_ostream_span.dir/src/span_exporter.cc.o
+#13 54.17 [ 68%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/data/circular_buffer.cc.o
+#13 54.71 [ 68%] Building CXX object exporters/memory/CMakeFiles/opentelemetry_exporter_in_memory.dir/src/in_memory_span_exporter_factory.cc.o
+#13 55.54 [ 69%] Building CXX object exporters/ostream/CMakeFiles/opentelemetry_exporter_ostream_span.dir/src/span_exporter_factory.cc.o
+#13 55.63 [ 70%] Building CXX object sdk/src/logs/CMakeFiles/opentelemetry_logs.dir/readable_log_record.cc.o
+#13 57.20 [ 71%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/exemplar/reservoir.cc.o
+#13 57.24 [ 72%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/view/instrument_selector_factory.cc.o
+#13 57.68 [ 73%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/view/meter_selector_factory.cc.o
+#13 59.22 [ 73%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/view/view_factory.cc.o
+#13 59.68 [ 74%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/view/view_registry_factory.cc.o
+#13 60.08 [ 75%] Building CXX object sdk/src/metrics/CMakeFiles/opentelemetry_metrics.dir/sync_instruments.cc.o
+#13 60.76 [ 76%] Linking CXX static library libopentelemetry_logs.a
+#13 60.89 [ 76%] Built target opentelemetry_logs
+#13 60.93 [ 77%] Building CXX object exporters/ostream/CMakeFiles/opentelemetry_exporter_ostream_logs.dir/src/log_record_exporter.cc.o
+#13 62.00 [ 78%] Building CXX object exporters/ostream/CMakeFiles/opentelemetry_exporter_ostream_logs.dir/src/log_record_exporter_factory.cc.o
+#13 64.79 [ 79%] Linking CXX static library libopentelemetry_exporter_ostream_span.a
+#13 64.86 [ 79%] Built target opentelemetry_exporter_ostream_span
+#13 67.31 [ 80%] Linking CXX static library libopentelemetry_exporter_in_memory.a
+#13 67.36 [ 80%] Linking CXX static library libopentelemetry_exporter_ostream_logs.a
+#13 67.38 [ 80%] Built target opentelemetry_exporter_in_memory
+#13 67.41 [ 80%] Built target opentelemetry_exporter_ostream_logs
+#13 68.71 [ 80%] Linking CXX static library libopentelemetry_metrics.a
+#13 68.80 [ 80%] Built target opentelemetry_metrics
+#13 68.84 [ 81%] Building CXX object exporters/ostream/CMakeFiles/opentelemetry_exporter_ostream_metrics.dir/src/metric_exporter.cc.o
+#13 68.85 [ 82%] Building CXX object exporters/ostream/CMakeFiles/opentelemetry_exporter_ostream_metrics.dir/src/metric_exporter_factory.cc.o
+#13 68.85 [ 83%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_otlp_recordable.dir/src/otlp_metric_utils.cc.o
+#13 68.85 [ 84%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_otlp_recordable.dir/src/otlp_recordable.cc.o
+#13 68.85 [ 85%] Building CXX object exporters/memory/CMakeFiles/opentelemetry_exporter_in_memory_metric.dir/src/in_memory_metric_exporter_factory.cc.o
+#13 68.85 [ 86%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_otlp_recordable.dir/src/otlp_populate_attribute_utils.cc.o
+#13 68.85 [ 86%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_otlp_recordable.dir/src/otlp_recordable_utils.cc.o
+#13 68.86 [ 87%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_otlp_recordable.dir/src/otlp_environment.cc.o
+#13 68.86 [ 88%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_otlp_recordable.dir/src/otlp_log_recordable.cc.o
+#13 68.86 [ 89%] Building CXX object exporters/memory/CMakeFiles/opentelemetry_exporter_in_memory_metric.dir/src/in_memory_metric_data.cc.o
+#13 75.45 [ 89%] Linking CXX static library libopentelemetry_exporter_in_memory_metric.a
+#13 75.50 [ 89%] Built target opentelemetry_exporter_in_memory_metric
+#13 76.07 [ 90%] Linking CXX static library libopentelemetry_exporter_ostream_metrics.a
+#13 76.11 [ 90%] Built target opentelemetry_exporter_ostream_metrics
+#13 76.84 [ 91%] Linking CXX static library libopentelemetry_otlp_recordable.a
+#13 76.89 [ 91%] Built target opentelemetry_otlp_recordable
+#13 76.94 [ 92%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc.dir/src/otlp_grpc_exporter_options.cc.o
+#13 76.94 [ 92%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc_log.dir/src/otlp_grpc_log_record_exporter.cc.o
+#13 76.94 [ 93%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc.dir/src/otlp_grpc_exporter.cc.o
+#13 76.94 [ 93%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc.dir/src/otlp_grpc_exporter_factory.cc.o
+#13 76.95 [ 95%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc_log.dir/src/otlp_grpc_log_record_exporter_factory.cc.o
+#13 76.95 [ 95%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc_log.dir/src/otlp_grpc_log_record_exporter_options.cc.o
+#13 76.95 [ 96%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc_metrics.dir/src/otlp_grpc_metric_exporter_options.cc.o
+#13 76.95 [ 96%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc_metrics.dir/src/otlp_grpc_metric_exporter.cc.o
+#13 76.96 [ 97%] Building CXX object exporters/otlp/CMakeFiles/opentelemetry_exporter_otlp_grpc_metrics.dir/src/otlp_grpc_metric_exporter_factory.cc.o
+#13 86.17 [ 98%] Linking CXX static library libopentelemetry_exporter_otlp_grpc_metrics.a
+#13 86.22 [ 98%] Built target opentelemetry_exporter_otlp_grpc_metrics
+#13 86.70 [ 99%] Linking CXX static library libopentelemetry_exporter_otlp_grpc_log.a
+#13 86.73 [ 99%] Built target opentelemetry_exporter_otlp_grpc_log
+#13 86.85 [100%] Linking CXX static library libopentelemetry_exporter_otlp_grpc.a
+#13 86.88 [100%] Built target opentelemetry_exporter_otlp_grpc
+#13 86.90 Install the project...
+#13 86.91 -- Install configuration: "Release"
+#13 86.91 -- Installing: /usr/local/include/opentelemetry
+#13 86.91 -- Installing: /usr/local/include/opentelemetry/proto
+#13 86.91 -- Installing: /usr/local/include/opentelemetry/proto/collector
+#13 86.91 -- Installing: /usr/local/include/opentelemetry/proto/collector/metrics
+#13 86.91 -- Installing: /usr/local/include/opentelemetry/proto/collector/metrics/v1
+#13 86.91 -- Installing: /usr/local/include/opentelemetry/proto/collector/metrics/v1/metrics_service_mock.grpc.pb.h
+#13 86.91 -- Installing: /usr/local/include/opentelemetry/proto/collector/metrics/v1/metrics_service.pb.h
+#13 86.91 -- Installing: /usr/local/include/opentelemetry/proto/collector/metrics/v1/metrics_service.grpc.pb.h
+#13 86.91 -- Installing: /usr/local/include/opentelemetry/proto/collector/profiles
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/profiles/v1development
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/profiles/v1development/profiles_service.grpc.pb.h
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/profiles/v1development/profiles_service_mock.grpc.pb.h
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/profiles/v1development/profiles_service.pb.h
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/trace
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/trace/v1
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/trace/v1/trace_service.grpc.pb.h
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/trace/v1/trace_service.pb.h
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/trace/v1/trace_service_mock.grpc.pb.h
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/logs
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/logs/v1
+#13 86.92 -- Installing: /usr/local/include/opentelemetry/proto/collector/logs/v1/logs_service_mock.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/collector/logs/v1/logs_service.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/collector/logs/v1/logs_service.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/metrics
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/metrics/v1
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/metrics/v1/metrics.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/metrics/v1/metrics.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/metrics/v1/metrics_mock.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/common
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/common/v1
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/common/v1/common.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/common/v1/common.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/common/v1/common_mock.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/profiles
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/profiles/v1development
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/profiles/v1development/profiles.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/profiles/v1development/profiles_mock.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/profiles/v1development/profiles.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/trace
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/trace/v1
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/trace/v1/trace_mock.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/trace/v1/trace.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/trace/v1/trace.grpc.pb.h
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/resource
+#13 86.93 -- Installing: /usr/local/include/opentelemetry/proto/resource/v1
+#13 86.94 -- Installing: /usr/local/include/opentelemetry/proto/resource/v1/resource.pb.h
+#13 86.94 -- Installing: /usr/local/include/opentelemetry/proto/resource/v1/resource_mock.grpc.pb.h
+#13 86.94 -- Installing: /usr/local/include/opentelemetry/proto/resource/v1/resource.grpc.pb.h
+#13 86.94 -- Installing: /usr/local/include/opentelemetry/proto/logs
+#13 86.94 -- Installing: /usr/local/include/opentelemetry/proto/logs/v1
+#13 86.94 -- Installing: /usr/local/include/opentelemetry/proto/logs/v1/logs_mock.grpc.pb.h
+#13 86.94 -- Installing: /usr/local/include/opentelemetry/proto/logs/v1/logs.pb.h
+#13 86.94 -- Installing: /usr/local/include/opentelemetry/proto/logs/v1/logs.grpc.pb.h
+#13 86.94 -- Installing: /usr/local/lib/pkgconfig/opentelemetry_api.pc
+#13 86.94 -- Installing: /usr/local/lib/pkgconfig/opentelemetry_common.pc
+#13 86.94 -- Installing: /usr/local/lib/pkgconfig/opentelemetry_trace.pc
+#13 86.94 -- Installing: /usr/local/lib/pkgconfig/opentelemetry_metrics.pc
+#13 86.94 -- Installing: /usr/local/lib/pkgconfig/opentelemetry_logs.pc
+#13 86.94 -- Installing: /usr/local/lib/pkgconfig/opentelemetry_version.pc
+#13 86.94 -- Installing: /usr/local/lib/pkgconfig/opentelemetry_resources.pc
+#13 86.94 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-config.cmake
+#13 86.94 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-config-version.cmake
+#13 86.94 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/find-package-support-functions.cmake
+#13 86.95 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-api-target.cmake
+#13 86.95 -- Up-to-date: /usr/local/include/opentelemetry
+#13 86.95 -- Installing: /usr/local/include/opentelemetry/detail
+#13 86.95 -- Installing: /usr/local/include/opentelemetry/detail/preprocessor.h
+#13 86.95 -- Installing: /usr/local/include/opentelemetry/baggage
+#13 86.95 -- Installing: /usr/local/include/opentelemetry/baggage/baggage_context.h
+#13 86.95 -- Installing: /usr/local/include/opentelemetry/baggage/baggage.h
+#13 86.96 -- Installing: /usr/local/include/opentelemetry/baggage/propagation
+#13 86.96 -- Installing: /usr/local/include/opentelemetry/baggage/propagation/baggage_propagator.h
+#13 86.96 -- Installing: /usr/local/include/opentelemetry/metrics
+#13 86.96 -- Installing: /usr/local/include/opentelemetry/metrics/sync_instruments.h
+#13 86.96 -- Installing: /usr/local/include/opentelemetry/metrics/meter.h
+#13 86.96 -- Installing: /usr/local/include/opentelemetry/metrics/observer_result.h
+#13 86.96 -- Installing: /usr/local/include/opentelemetry/metrics/noop.h
+#13 86.96 -- Installing: /usr/local/include/opentelemetry/metrics/meter_provider.h
+#13 86.96 -- Installing: /usr/local/include/opentelemetry/metrics/async_instruments.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/metrics/provider.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/context
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/context/runtime_context.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/context/propagation
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/context/propagation/global_propagator.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/context/propagation/noop_propagator.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/context/propagation/text_map_propagator.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/context/propagation/composite_propagator.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/context/context_value.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/context/context.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/nostd
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/nostd/detail
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/nostd/detail/void.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/nostd/detail/trait.h
+#13 86.97 -- Installing: /usr/local/include/opentelemetry/nostd/detail/invoke.h
+#13 86.98 -- Installing: /usr/local/include/opentelemetry/nostd/detail/decay.h
+#13 86.98 -- Installing: /usr/local/include/opentelemetry/nostd/detail/valueless.h
+#13 86.98 -- Installing: /usr/local/include/opentelemetry/nostd/detail/dependent_type.h
+#13 86.98 -- Installing: /usr/local/include/opentelemetry/nostd/detail/variant_size.h
+#13 86.98 -- Installing: /usr/local/include/opentelemetry/nostd/detail/variant_fwd.h
+#13 86.99 -- Installing: /usr/local/include/opentelemetry/nostd/detail/all.h
+#13 86.99 -- Installing: /usr/local/include/opentelemetry/nostd/detail/variant_alternative.h
+#13 86.99 -- Installing: /usr/local/include/opentelemetry/nostd/detail/functional.h
+#13 86.99 -- Installing: /usr/local/include/opentelemetry/nostd/detail/type_pack_element.h
+#13 86.99 -- Installing: /usr/local/include/opentelemetry/nostd/shared_ptr.h
+#13 86.99 -- Installing: /usr/local/include/opentelemetry/nostd/function_ref.h
+#13 86.99 -- Installing: /usr/local/include/opentelemetry/nostd/utility.h
+#13 86.99 -- Installing: /usr/local/include/opentelemetry/nostd/variant.h
+#13 87.00 -- Installing: /usr/local/include/opentelemetry/nostd/string_view.h
+#13 87.00 -- Installing: /usr/local/include/opentelemetry/nostd/unique_ptr.h
+#13 87.00 -- Installing: /usr/local/include/opentelemetry/nostd/span.h
+#13 87.00 -- Installing: /usr/local/include/opentelemetry/nostd/type_traits.h
+#13 87.00 -- Installing: /usr/local/include/opentelemetry/nostd/internal
+#13 87.00 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl
+#13 87.00 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/meta
+#13 87.00 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/meta/type_traits.h
+#13 87.00 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/utility
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/utility/utility.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/options.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/config.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/macros.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/optimization.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/port.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/policy_checks.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/attributes.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/internal
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/internal/invoke.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/internal/identity.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/base/internal/inline_variable.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/types
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/types/bad_variant_access.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/types/variant.h
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/types/internal
+#13 87.01 -- Installing: /usr/local/include/opentelemetry/nostd/internal/absl/types/internal/variant.h
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/detail
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/detail/dynamic_load_windows.h
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/detail/dynamic_library_handle.h
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/detail/loader_info.h
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/detail/utility.h
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/detail/tracer_handle.h
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/detail/dynamic_load_unix.h
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/hook.h
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/dynamic_load.h
+#13 87.02 -- Installing: /usr/local/include/opentelemetry/plugin/factory.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/plugin/tracer.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/std
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/std/shared_ptr.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/std/utility.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/std/variant.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/std/string_view.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/std/unique_ptr.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/std/span.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/std/type_traits.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/version.h
+#13 87.03 -- Installing: /usr/local/include/opentelemetry/config.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/common
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/common/string_util.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/common/spin_lock_mutex.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/common/key_value_iterable.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/common/key_value_iterable_view.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/common/attribute_value.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/common/macros.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/common/kv_properties.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/common/timestamp.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/span_id.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/span_context_kv_iterable.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/tracer_provider.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/span_metadata.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/trace_flags.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/propagation
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/propagation/detail
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/propagation/detail/hex.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/propagation/detail/string.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/propagation/b3_propagator.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/propagation/http_trace_context.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/propagation/jaeger.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/noop.h
+#13 87.04 -- Installing: /usr/local/include/opentelemetry/trace/span_context_kv_iterable_view.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/span_context.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/default_span.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/span.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/scope.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/tracer.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/span_startoptions.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/trace_id.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/context.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/trace_state.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/trace/provider.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/semconv
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/semconv/gen_ai_metrics.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/semconv/http_attributes.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/semconv/code_attributes.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/semconv/exception_attributes.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/semconv/server_attributes.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/semconv/client_attributes.h
+#13 87.05 -- Installing: /usr/local/include/opentelemetry/semconv/schema_url.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/db_metrics.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/url_attributes.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/faas_metrics.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/cicd_metrics.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/otel_metrics.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/telemetry_attributes.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/otel_attributes.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/rpc_metrics.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/k8s_metrics.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/dns_metrics.h
+#13 87.06 -- Installing: /usr/local/include/opentelemetry/semconv/network_attributes.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/http_metrics.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/container_metrics.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/cpu_metrics.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/hw_metrics.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/system_metrics.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/user_agent_attributes.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/error_attributes.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/azure_metrics.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/incubating
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/other_attributes.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/gen_ai_metrics.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/http_attributes.h
+#13 87.07 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/test_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/azure_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/aws_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/device_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/code_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/container_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/session_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/event_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/system_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/exception_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/hw_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/message_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/server_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/client_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/openai_attributes.h
+#13 87.08 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/tls_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/feature_flag_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/artifact_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/db_metrics.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/graphql_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/deployment_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/az_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/process_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/file_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/net_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/url_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/faas_metrics.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/k8s_attributes.h
+#13 87.09 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/log_attributes.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/source_attributes.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cicd_metrics.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/otel_metrics.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/faas_attributes.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/telemetry_attributes.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/otel_attributes.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/rpc_metrics.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/k8s_metrics.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/pool_attributes.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/thread_attributes.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/oci_attributes.h
+#13 87.10 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/messaging_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/dns_metrics.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/os_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/network_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/http_metrics.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cassandra_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cloudfoundry_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/opentracing_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/container_metrics.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/zos_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/vcs_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/gen_ai_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cpu_metrics.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/webengine_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/enduser_attributes.h
+#13 87.11 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cloud_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/mainframe_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/peer_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/hw_metrics.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/profile_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/app_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/browser_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cloudevents_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/host_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/system_metrics.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/user_agent_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/rpc_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/error_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/security_rule_attributes.h
+#13 87.12 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/azure_metrics.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/dns_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/disk_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/linux_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/geo_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cpython_metrics.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/gcp_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/messaging_metrics.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/db_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/service_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/destination_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cpu_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/vcs_metrics.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/elasticsearch_attributes.h
+#13 87.13 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/heroku_attributes.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cicd_attributes.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/process_metrics.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/user_attributes.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/semconv/incubating/cpython_attributes.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/semconv/messaging_metrics.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/semconv/db_attributes.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/semconv/service_attributes.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/semconv/vcs_metrics.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/semconv/process_metrics.h
+#13 87.14 -- Installing: /usr/local/include/opentelemetry/logs
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/logger.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/logger_type_traits.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/noop.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/event_logger.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/event_id.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/logger_provider.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/provider.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/log_record.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/event_logger_provider.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/logs/severity.h
+#13 87.15 -- Installing: /usr/local/lib/libopentelemetry_common.a
+#13 87.15 -- Installing: /usr/local/lib/libopentelemetry_resources.a
+#13 87.15 -- Installing: /usr/local/lib/libopentelemetry_version.a
+#13 87.15 -- Installing: /usr/local/lib/libopentelemetry_logs.a
+#13 87.15 -- Installing: /usr/local/lib/libopentelemetry_trace.a
+#13 87.15 -- Installing: /usr/local/lib/libopentelemetry_metrics.a
+#13 87.15 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-sdk-target.cmake
+#13 87.15 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-sdk-target-release.cmake
+#13 87.15 -- Up-to-date: /usr/local/include/opentelemetry
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/sdk
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/sdk/version
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/sdk/version/version.h
+#13 87.15 -- Installing: /usr/local/include/opentelemetry/sdk/configuration
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/pull_metric_reader_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_grpc_span_exporter_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/last_value_aggregation_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/aggregation_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/simple_span_processor_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/zipkin_span_exporter_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/prometheus_pull_metric_exporter_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/span_limits_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_log_record_exporter_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/pull_metric_exporter_configuration_visitor.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_http_log_record_exporter_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/ryml_document_node.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/log_record_processor_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_http_push_metric_exporter_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_push_metric_exporter_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_file_log_record_exporter_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/invalid_schema_exception.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/tracer_provider_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/console_push_metric_exporter_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/metric_producer_configuration_visitor.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/pull_metric_exporter_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_grpc_push_metric_exporter_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_grpc_push_metric_exporter_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_span_exporter_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_sampler_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/attributes_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_grpc_log_record_exporter_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/default_histogram_aggregation.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_push_metric_exporter_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/view_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/metric_reader_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/sampler_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/log_record_exporter_configuration_visitor.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_http_span_exporter_builder.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/resource_configuration.h
+#13 87.16 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/log_record_exporter_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/string_attribute_value_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_pull_metric_exporter_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_log_record_processor_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/log_record_processor_configuration_visitor.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/meter_provider_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/span_exporter_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/integer_attribute_value_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/console_push_metric_exporter_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_span_processor_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/push_metric_exporter_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/always_off_sampler_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_http_span_exporter_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/registry.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_http_push_metric_exporter_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_log_record_processor_builder.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_span_exporter_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/logger_provider_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/configured_sdk.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/attribute_value_configuration_visitor.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/configuration_parser.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/text_map_propagator_builder.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/base2_exponential_bucket_histogram_aggregation_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/view_stream_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/boolean_attribute_value_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/aggregation_configuration_visitor.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/batch_span_processor_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/console_log_record_exporter_builder.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/temporality_preference.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/yaml_configuration_parser.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/double_array_attribute_value_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/periodic_metric_reader_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/drop_aggregation_configuration.h
+#13 87.17 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_span_processor_builder.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_grpc_span_exporter_builder.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/push_metric_exporter_configuration_visitor.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_pull_metric_exporter_builder.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/explicit_bucket_histogram_aggregation_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/zipkin_span_exporter_builder.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/metric_producer_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_file_push_metric_exporter_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_grpc_log_record_exporter_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/attribute_limits_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/attribute_value_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/batch_log_record_processor_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/simple_log_record_processor_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/ryml_document.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/view_selector_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_http_log_record_exporter_builder.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/console_span_exporter_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_file_span_exporter_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/document.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/jaeger_remote_sampler_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/parent_based_sampler_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/propagator_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_file_push_metric_exporter_builder.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/string_array_attribute_value_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/trace_id_ratio_based_sampler_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/sampler_configuration_visitor.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/console_span_exporter_builder.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/string_array_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/headers_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/integer_array_attribute_value_configuration.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/span_processor_configuration_visitor.h
+#13 87.18 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/prometheus_pull_metric_exporter_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/span_exporter_configuration_visitor.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/document_node.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_file_span_exporter_builder.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/span_processor_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_file_log_record_exporter_builder.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/console_log_record_exporter_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/unsupported_exception.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_sampler_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/otlp_http_encoding.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/default_aggregation_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/sdk_builder.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/log_record_limits_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/always_on_sampler_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/metric_reader_configuration_visitor.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/double_attribute_value_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_metric_producer_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/instrument_type.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/extension_log_record_exporter_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/boolean_array_attribute_value_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/open_census_metric_producer_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/sum_aggregation_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/configuration/include_exclude_configuration.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/meter_config.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation/drop_aggregation.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation/aggregation.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation/histogram_aggregation.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation/base2_exponential_histogram_aggregation.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation/sum_aggregation.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation/default_aggregation.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation/aggregation_config.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation/base2_exponential_histogram_indexer.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/aggregation/lastvalue_aggregation.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/sync_instruments.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/meter.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/meter_selector.h
+#13 87.19 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/meter_selector_factory.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/predicate_factory.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/predicate.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/instrument_selector.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/view_registry.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/view.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/view_registry_factory.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/attributes_processor.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/view_factory.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/view/instrument_selector_factory.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/meter_context.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/metric_reader.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/instruments.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/observer_result.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/export
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader_factory.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader_runtime_options.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/export/metric_producer.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/export/metric_filter.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader_options.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar/simple_fixed_size_exemplar_reservoir.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar/reservoir.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar/fixed_size_exemplar_reservoir.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar/reservoir_cell.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar/filter_type.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar/reservoir_cell_selector.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar/no_exemplar_reservoir.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar/reservoir_utils.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/exemplar/aligned_histogram_bucket_exemplar_reservoir.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/meter_provider_factory.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/meter_provider.h
+#13 87.20 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/data
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/data/point_data.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/data/exemplar_data.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/data/circular_buffer.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/data/metric_data.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state/observable_registry.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state/temporal_metric_storage.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state/multi_metric_storage.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state/async_metric_storage.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state/sync_metric_storage.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state/filtered_ordered_attribute_map.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state/metric_storage.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state/metric_collector.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/state/attributes_hashmap.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/meter_context_factory.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/instrument_metadata_validator.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/async_instruments.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/provider.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/metrics/push_metric_exporter.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/instrumentationlibrary
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/instrumentationlibrary/instrumentation_library.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/instrumentationscope
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/instrumentationscope/instrumentation_scope.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/instrumentationscope/scope_configurator.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/common
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/common/thread_instrumentation.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/common/disabled.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/common/base64.h
+#13 87.21 -- Installing: /usr/local/include/opentelemetry/sdk/common/attribute_utils.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/attributemap_hash.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/circular_buffer.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/circular_buffer_range.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/atomic_unique_ptr.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/empty_attributes.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/atomic_shared_ptr.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/custom_hash_equality.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/env_variables.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/global_log_handler.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/common/exporter_utils.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/span_data.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/id_generator.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/samplers
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/samplers/trace_id_ratio_factory.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/samplers/always_off.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/samplers/parent.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/samplers/always_on_factory.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/samplers/trace_id_ratio.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/samplers/always_off_factory.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/samplers/always_on.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/samplers/parent_factory.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/tracer_context_factory.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/batch_span_processor_options.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/multi_span_processor.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/tracer_provider.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/batch_span_processor_runtime_options.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/exporter.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/sampler.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/tracer_provider_factory.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/recordable.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/processor.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/batch_span_processor_factory.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/simple_processor_factory.h
+#13 87.22 -- Installing: /usr/local/include/opentelemetry/sdk/trace/batch_span_processor.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/trace/tracer_config.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/trace/tracer.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/trace/random_id_generator.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/trace/provider.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/trace/random_id_generator_factory.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/trace/tracer_context.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/trace/multi_recordable.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/trace/simple_processor.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/resource
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/resource/resource.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/resource/resource_detector.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/logger.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/event_logger_provider_factory.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/batch_log_record_processor_options.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/readable_log_record.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/exporter.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/simple_log_record_processor.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/batch_log_record_processor_runtime_options.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/logger_context_factory.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/recordable.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/read_write_log_record.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/event_logger.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/processor.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/batch_log_record_processor_factory.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/multi_log_record_processor_factory.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/logger_context.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/simple_log_record_processor_factory.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/logger_config.h
+#13 87.23 -- Installing: /usr/local/include/opentelemetry/sdk/logs/logger_provider.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry/sdk/logs/logger_provider_factory.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry/sdk/logs/provider.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry/sdk/logs/batch_log_record_processor.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry/sdk/logs/event_logger_provider.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry/sdk/logs/multi_log_record_processor.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry/sdk/logs/multi_recordable.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry/sdk_config.h
+#13 87.24 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-ext_common-target.cmake
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/client
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/client/http_client.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/client/http_client_factory.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/client/curl
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/client/curl/http_client_curl.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/client/curl/http_operation_curl.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/common
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/common/url_parser.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/server
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/server/http_server.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/server/file_http_server.h
+#13 87.24 -- Installing: /usr/local/include/opentelemetry//ext/http/server/socket_tools.h
+#13 87.24 -- Installing: /usr/local/lib/libopentelemetry_otlp_recordable.a
+#13 87.25 -- Installing: /usr/local/lib/libopentelemetry_proto.so
+#13 87.25 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_otlp_common-target.cmake
+#13 87.25 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_otlp_common-target-release.cmake
+#13 87.25 -- Installing: /usr/local/include/opentelemetry/exporters/otlp
+#13 87.25 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_log_recordable.h
+#13 87.25 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_recordable_utils.h
+#13 87.25 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/protobuf_include_prefix.h
+#13 87.25 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_builder_utils.h
+#13 87.25 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_preferred_temporality.h
+#13 87.25 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_environment.h
+#13 87.25 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/protobuf_include_suffix.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_populate_attribute_utils.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_metric_utils.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_recordable.h
+#13 87.26 -- Installing: /usr/local/lib/libopentelemetry_exporter_otlp_grpc_client.a
+#13 87.26 -- Installing: /usr/local/lib/libopentelemetry_proto_grpc.so
+#13 87.26 -- Set non-toolchain portion of runtime path of "/usr/local/lib/libopentelemetry_proto_grpc.so" to ""
+#13 87.26 -- Installing: /usr/local/lib/libopentelemetry_exporter_otlp_grpc.a
+#13 87.26 -- Installing: /usr/local/lib/libopentelemetry_exporter_otlp_grpc_log.a
+#13 87.26 -- Installing: /usr/local/lib/libopentelemetry_exporter_otlp_grpc_metrics.a
+#13 87.26 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_otlp_grpc-target.cmake
+#13 87.26 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_otlp_grpc-target-release.cmake
+#13 87.26 -- Up-to-date: /usr/local/include/opentelemetry/exporters/otlp
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_push_metric_builder.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_client_factory.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_exporter_options.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_log_record_exporter_options.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_log_record_exporter.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_span_builder.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_metric_exporter_factory.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_log_record_builder.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_metric_exporter.h
+#13 87.26 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_client.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_utils.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_exporter.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_log_record_exporter_factory.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_client_options.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_exporter_factory.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/otlp/otlp_grpc_metric_exporter_options.h
+#13 87.27 -- Installing: /usr/local/lib/libopentelemetry_exporter_ostream_span.a
+#13 87.27 -- Installing: /usr/local/lib/libopentelemetry_exporter_ostream_metrics.a
+#13 87.27 -- Installing: /usr/local/lib/libopentelemetry_exporter_ostream_logs.a
+#13 87.27 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_ostream-target.cmake
+#13 87.27 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_ostream-target-release.cmake
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/log_record_exporter.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/span_exporter_factory.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/console_span_builder.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/common_utils.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/log_record_exporter_factory.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/metric_exporter.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/console_push_metric_builder.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/console_log_record_builder.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/span_exporter.h
+#13 87.27 -- Installing: /usr/local/include/opentelemetry/exporters/ostream/metric_exporter_factory.h
+#13 87.27 -- Installing: /usr/local/lib/libopentelemetry_exporter_in_memory.a
+#13 87.28 -- Installing: /usr/local/lib/libopentelemetry_exporter_in_memory_metric.a
+#13 87.28 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_in_memory-target.cmake
+#13 87.28 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_in_memory-target-release.cmake
+#13 87.28 -- Installing: /usr/local/include/opentelemetry/exporters/memory
+#13 87.28 -- Installing: /usr/local/include/opentelemetry/exporters/memory/in_memory_metric_exporter_factory.h
+#13 87.28 -- Installing: /usr/local/include/opentelemetry/exporters/memory/in_memory_span_exporter_factory.h
+#13 87.28 -- Installing: /usr/local/include/opentelemetry/exporters/memory/in_memory_data.h
+#13 87.28 -- Installing: /usr/local/include/opentelemetry/exporters/memory/in_memory_metric_data.h
+#13 87.28 -- Installing: /usr/local/include/opentelemetry/exporters/memory/in_memory_span_exporter.h
+#13 87.28 -- Installing: /usr/local/include/opentelemetry/exporters/memory/in_memory_span_data.h
+#13 87.28 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/component-definitions.cmake
+#13 87.28 -- Installing: /usr/local/lib/cmake/opentelemetry-cpp/thirdparty-dependency-definitions.cmake
+#13 DONE 87.4s
+
+#14 [builder 4/6] COPY ./src/currency /currency
+#14 DONE 0.1s
+
+#15 [builder 5/6] COPY ./pb/demo.proto /currency/proto/demo.proto
+#15 DONE 0.1s
+
+#16 [builder 6/6] RUN cd /currency     && mkdir -p build     && cd build     && cmake ..     && make -j1 install
+#16 0.477 CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+#16 0.477   Compatibility with CMake < 3.5 will be removed from a future version of
+#16 0.477   CMake.
+#16 0.477 
+#16 0.477   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+#16 0.477   CMake that the project does not need compatibility with older versions.
+#16 0.477 
+#16 0.477 
+#16 0.555 -- The C compiler identification is GNU 13.2.1
+#16 0.625 -- The CXX compiler identification is GNU 13.2.1
+#16 0.660 -- Detecting C compiler ABI info
+#16 0.751 -- Detecting C compiler ABI info - done
+#16 0.780 -- Check for working C compiler: /usr/bin/cc - skipped
+#16 0.814 -- Detecting C compile features
+#16 0.820 -- Detecting C compile features - done
+#16 0.862 -- Detecting CXX compiler ABI info
+#16 0.991 -- Detecting CXX compiler ABI info - done
+#16 1.018 -- Check for working CXX compiler: /usr/bin/c++ - skipped
+#16 1.019 -- Detecting CXX compile features
+#16 1.020 -- Detecting CXX compile features - done
+#16 1.146 -- Found Protobuf: /usr/lib/libprotobuf.so (found version "4.24.4")
+#16 1.168 -- Found ZLIB: /lib/libz.so (found version "1.3.2")
+#16 1.177 -- Found Threads: TRUE
+#16 1.262 -- Found OpenSSL: /usr/lib/libcrypto.so (found version "3.3.7")
+#16 1.274 -- Could NOT find c-ares (missing: c-ares_DIR)
+#16 1.274 -- Found c-ares: /usr/include (found version "1.33.1")
+#16 1.313 -- Found RE2 via CMake.
+#16 1.321 CMake Warning (dev) at /usr/local/lib/cmake/opentelemetry-cpp/find-package-support-functions.cmake:119 (if):
+#16 1.321   Policy CMP0057 is not set: Support new IN_LIST if() operator.  Run "cmake
+#16 1.321   --help-policy CMP0057" for policy details.  Use the cmake_policy command to
+#16 1.321   set the policy and suppress this warning.
+#16 1.321 
+#16 1.321   IN_LIST will be interpreted as an operator when the policy is set to NEW.
+#16 1.321   Since the policy is not set the OLD behavior will be used.
+#16 1.321 Call Stack (most recent call first):
+#16 1.321   /usr/local/lib/cmake/opentelemetry-cpp/find-package-support-functions.cmake:138 (is_dependency_required)
+#16 1.321   /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-config.cmake:207 (find_required_dependencies)
+#16 1.321   CMakeLists.txt:6 (find_package)
+#16 1.321 This warning is for project developers.  Use -Wno-dev to suppress it.
+#16 1.321 
+#16 1.321 CMake Error at /usr/local/lib/cmake/opentelemetry-cpp/find-package-support-functions.cmake:119 (if):
+#16 1.321   if given arguments:
+#16 1.321 
+#16 1.321     "Microsoft.GSL" "IN_LIST" "COMPONENT_api_THIRDPARTY_DEPENDS"
+#16 1.321 
+#16 1.321   Unknown arguments specified
+#16 1.321 Call Stack (most recent call first):
+#16 1.321   /usr/local/lib/cmake/opentelemetry-cpp/find-package-support-functions.cmake:138 (is_dependency_required)
+#16 1.321   /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-config.cmake:207 (find_required_dependencies)
+#16 1.321   CMakeLists.txt:6 (find_package)
+#16 1.321 
+#16 1.321 
+#16 1.321 -- Configuring incomplete, errors occurred!
+#16 ERROR: process "/bin/sh -c cd /currency     && mkdir -p build     && cd build     && cmake ..     && make -j1 install" did not complete successfully: exit code: 1
+------
+ > [builder 6/6] RUN cd /currency     && mkdir -p build     && cd build     && cmake ..     && make -j1 install:
+1.321     "Microsoft.GSL" "IN_LIST" "COMPONENT_api_THIRDPARTY_DEPENDS"
+1.321 
+1.321   Unknown arguments specified
+1.321 Call Stack (most recent call first):
+1.321   /usr/local/lib/cmake/opentelemetry-cpp/find-package-support-functions.cmake:138 (is_dependency_required)
+1.321   /usr/local/lib/cmake/opentelemetry-cpp/opentelemetry-cpp-config.cmake:207 (find_required_dependencies)
+1.321   CMakeLists.txt:6 (find_package)
+1.321 
+1.321 
+1.321 -- Configuring incomplete, errors occurred!
+------
+Dockerfile:42
+
+--------------------
+
+  41 |     
+
+  42 | >>> RUN cd /currency \
+
+  43 | >>>     && mkdir -p build \
+
+  44 | >>>     && cd build \
+
+  45 | >>>     && cmake .. \
+
+  46 | >>>     && make -j1 install
+
+  47 |     
+
+--------------------
+
+failed to solve: process "/bin/sh -c cd /currency     && mkdir -p build     && cd build     && cmake ..     && make -j1 install" did not complete successfully: exit code: 1
+

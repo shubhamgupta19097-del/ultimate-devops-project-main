@@ -2,8 +2,10 @@ FROM eclipse-temurin:21-jdk AS builder
 
 WORKDIR /usr/src/app/
 
-COPY gradlew* settings.gradle* build.gradle .
-COPY ./gradle ./gradle
+COPY ./src/ad/gradlew ./
+COPY ./src/ad/settings.gradle ./
+COPY ./src/ad/build.gradle ./
+COPY ./src/ad/gradle ./gradle
 
 RUN chmod +x ./gradlew
 RUN ./gradlew
